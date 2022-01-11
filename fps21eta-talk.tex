@@ -36,29 +36,70 @@
 \definecolor{schwarz}{rgb}{0 , 0 , 0}
 \definecolor{violet}{RGB}{143,0,255}
 \definecolor{forestgreen}{RGB}{34, 100, 34}
+
+\newcommand{\ssty}{\scriptstyle}
+\newcommand{\w}{\omega}
+\newcommand{\sr}{\stackrel}
+\newcommand{\ov}{\overline}
+\newcommand{\ga}{\gamma}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\si}{\sigma}
+\newcommand{\la}{\lambda}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\CC}{\mathbb{C}} % complex numbers
+\newcommand{\RR}{\mathbb{R}} % real numbers
+\newcommand{\QQ}{\mathbb{Q}} % rational numbers
+\newcommand{\NN}{\mathbb{N}} % nonnegative integers
+\newcommand{\PP}{\mathbb{P}} % positive integers
+\newcommand{\ZZ}{\mathbb{Z}} % integers
+\newcommand{\id}{\operatorname{id}} % identity map
+\newcommand{\kk}{\mathbf{k}} % our base ring
+\newcommand{\QSym}{\operatorname{QSym}}
+\newcommand{\Des}{\operatorname{Des}}
+\newcommand{\Odd}{\operatorname{Odd}}
+\newcommand{\Comp}{\operatorname{Comp}}
+\newcommand{\Peak}{\operatorname{Peak}}
+
+% For shuffle product symbol
+\makeatletter
+\providecommand*{\shuffle}{%
+  \mathbin{\mathpalette\shuffle@{}}%
+}
+\newcommand*{\shuffle@}[2]{%
+  % #1: math style
+  % #2: unused
+  \sbox0{$#1\vcenter{}$}%
+  \kern .15\ht0 % side bearing
+  \rlap{\vrule height .25\ht0 depth 0pt width 2.5\ht0}%
+  \raise.1\ht0\hbox to 2.5\ht0{%
+    \vrule height 1.75\ht0 depth -.1\ht0 width .17\ht0 %
+    \hfill
+    \vrule height 1.75\ht0 depth -.1\ht0 width .17\ht0 %
+    \hfill
+    \vrule height 1.75\ht0 depth -.1\ht0 width .17\ht0 %
+  }%
+  \kern .15\ht0 % side bearing
+}
+
+\makeatother
+
+
 \newcommand{\red}{\color{red}}
 \newcommand{\grey}{\color{grau}}
 \newcommand{\green}{\color{forestgreen}}
 \newcommand{\violet}{\color{violet}}
 \newcommand{\blue}{\color{blue}}
 \newcommand{\EE}{{\mathbf{E}}}
-\newcommand{\ZZ}{{\mathbb Z}}
-\newcommand{\NN}{{\mathbb N}}
-\newcommand{\QQ}{{\mathbb Q}}
-\newcommand{\kk}{{\mathbf k}}
 \newcommand{\OO}{\operatorname {O}}
 \newcommand{\Nm}{\operatorname {N}}
 \newcommand{\Par}{\operatorname{Par}}
-\newcommand{\Comp}{\operatorname{Comp}}
 \newcommand{\Stab}{\operatorname {Stab}}
-\newcommand{\id}{\operatorname{id}}
 \newcommand{\ev}{\operatorname{ev}}
 \newcommand{\Sym}{\operatorname{Sym}}
-\newcommand{\Des}{\operatorname{Des}}
 \newcommand{\des}{\operatorname{des}}
 \newcommand{\inv}{\operatorname{inv}}
 \newcommand{\maj}{\operatorname{maj}}
-\newcommand{\QSym}{\operatorname{QSym}}
 \newcommand{\NSym}{\operatorname{NSym}}
 \newcommand{\Gr}{\operatorname{Gr}}
 \newcommand{\QHo}{\operatorname{QH}}
@@ -220,77 +261,38 @@
 \fi
 \begin{document}
 
-\title{The Petrie symmetrie functions and Murnaghan--Nakayama rules [slides]}
-\author{\href{http://www.cip.ifi.lmu.de/~grinberg/}{Darij Grinberg}}
-\date{2020-07-08\\
-The Internets}
+\title{Weighted posets and the enriched monomial basis of QSym [slides]}
+\author{\href{http://www.cip.ifi.lmu.de/~grinberg/}{Darij Grinberg} and Ekaterina Vassilieva}
+\date{2022-01-17}
 \maketitle
-\tableofcontents
 
 \subsection*{***}
 
 \textbf{these slides: \color{red}
-\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/fps20pet-talk.pdf}}%
+\url{https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2021/58Grinberg.pdf}}%
 \newline\textbf{paper: \color{red}
-\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/petriesym.pdf}}%
-\newline\textbf{overview: \color{red}
-\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/fps20pet.pdf}} \newline
+\url{https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2021/58Grinberg.pdf}}%
+\newline
 
-\subsection{Manifest}
 
-\begin{itemize}
-\item What you are going to see:
+\section{Notations}
 
-\begin{itemize}
-\item A new family $\left(  G\left(  k,m\right)  \right)  _{m\geq0}$ of
-symmetric functions for each $k>0$.
-
-(So, a family of families.)
-
-\item It \textquotedblleft interpolates\textquotedblright\ between the $e$'s
-and the $h$'s in a sense.
-
-\item Various nice properties if I do say so myself.
-
-\item A proof (sketch) of a conjecture coming from algebraic groups.
-
-\item A source of homework exercises for your symmetric functions class.
-\end{itemize}
-
-\item What you are \textbf{not} going to see:
+\subsection{Compositions and permutations statistics}
 
 \begin{itemize}
-\item Meaning.
+\item $\PP=\left\{1,2,\dots\right\}$, $\NN = \left\{0,1,\ldots\right\}$, $[n] = \left\{1,2,\dots, n\right\}$, $S_n$ the symmetric group on $[n]$
+\item $\Comp(n)$ is the set of \emph{compositions} $\al = (\al_1, \al_2, \dots, \al_p)$ of $n$. Denote $\ell(\al) := p$ and $|\al| := \sum_i \al_i = n$. $\Odd(n)$ is the set of \emph{odd compositions} of $n$ containing only odd integers.
 
-\item Theory.
+\item The \emph{descent set} $\Des(\pi)$ of $\pi \in S_n$ is 
+$\Des(\pi) = \{1\leq i\leq n-1| \pi(i)>\pi(i+1)\}.$
 
-\item (mostly) actual combinatorics (algorithms, bijections, etc.).
+
+\item The \emph{peak set} $\Peak(\pi)$ of $\pi$ is $
+\Peak(\pi) = \{2\leq i\leq n-1| \pi(i-1)<\pi(i)>\pi(i+1)\}.$
+
+\item Compositions of $n$ are in bijection with descent sets of permutations in $S_n$ while odd compositions of $n$, are in one-to-one correspondence with peak sets.
+
 \end{itemize}
-\end{itemize}
-
-\section{Notations (skip if you know symmetric functions well)}
-
-\subsection{Symmetric functions: notation, 1}
-
-\begin{itemize}
-\item We will use standard notations for symmetric functions, such as used in:
-
-\begin{itemize}
-\item {\color{red}
-\href{https://www.cambridge.org/core/books/enumerative-combinatorics/D8DDDFF7E8EBF0BCFE99F5E6918CE2A8}{Richard
-Stanley, \textit{Enumerative Combinatorics, volume 2}, CUP 2001}}.
-
-\item {\color{red}
-\href{http://www.cip.ifi.lmu.de/~grinberg/algebra/HopfComb-sols.pdf}{D.G. and
-Victor Reiner, \textit{Hopf algebras in Combinatorics}, 2012-2020+}}.
-\end{itemize}
-
-\item Let $\mathbf{k}$ be a commutative ring ($\mathbb{Z}$ and $\mathbb{Q}$
-will suffice).
-
-\item Let $\mathbb{N}:=\left\{  0,1,2,\ldots\right\}  $.
-\end{itemize}
-
 \subsection{Symmetric functions: notation, 2}
 
 \begin{itemize}
