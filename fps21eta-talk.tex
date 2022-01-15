@@ -274,258 +274,136 @@
 \url{https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2021/58Grinberg.pdf}}%
 \newline
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Notations}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Compositions and permutations statistics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-\item $\PP=\left\{1,2,\dots\right\}$, $\NN = \left\{0,1,\ldots\right\}$, $[n] = \left\{1,2,\dots, n\right\}$, $S_n$ the symmetric group on $[n]$
-\item $\Comp(n)$ is the set of \emph{compositions} $\al = (\al_1, \al_2, \dots, \al_p)$ of $n$. Denote $\ell(\al) := p$ and $|\al| := \sum_i \al_i = n$. $\Odd(n)$ is the set of \emph{odd compositions} of $n$ containing only odd integers.
+\item $\PP =\left\{1,2,\dots\right\}$, $\NN = \left\{0,1,\ldots\right\}$, $[n] = \left\{1,2,\dots, n\right\}$, $S_n$ the symmetric group on $[n]$
 
-\item The \emph{descent set} $\Des(\pi)$ of $\pi \in S_n$ is 
+\item \defn{$\Comp(n)$} is the set of \defn{compositions} $\al = (\al_1, \al_2, \dots, \al_p)$ of $n$. \defn{$\Odd(n)$} is the set of \defn{odd compositions} of $n$ containing only odd integers.  Let $\ell(\al) := p$, $|\al| := \sum_i \al_i = n$.
+
+\item The \defn{descent set} $\Des(\pi)$ of $\pi \in S_n$ is 
 $\Des(\pi) = \{1\leq i\leq n-1| \pi(i)>\pi(i+1)\}.$
 
 
-\item The \emph{peak set} $\Peak(\pi)$ of $\pi$ is $
+\item The \defn{peak set} $\Peak(\pi)$ of $\pi$ is $
 \Peak(\pi) = \{2\leq i\leq n-1| \pi(i-1)<\pi(i)>\pi(i+1)\}.$
 
-\item Compositions of $n$ are in bijection with descent sets of permutations in $S_n$ while odd compositions of $n$, are in one-to-one correspondence with peak sets.
+\item Compositions of $n$ are in bijection with descent sets of permutations in $S_n$ while odd compositions of $n$, are in one-to-one correspondence with peak sets. Denote \defn{$Des(\al)$} (\defn{$Peak(\al)$}) the descent set (peak set) assiociated with  (odd) composition $\al$.
 
 \end{itemize}
-\subsection{Symmetric functions: notation, 2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Quasisymmetric functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{itemize}
-\item A \defn{weak composition} means a sequence $\left(  \alpha_{1}%
-,\alpha_{2},\alpha_{3},\ldots\right)  \in\mathbb{N}^{\infty}$ such that all
-$i\gg0$ satisfy $\alpha_{i}=0$.
+\item For any $n \in \NN$ and $\al =(\al_1,\al_2,\dots,\al_p) \in \Comp(n)$, define the \defn{monomial quasisymmetric function} $M_\al$ and the \defn{fundamental quasisymmetric function} $L_\al$ by
 
-\item We let \defn{$\operatorname*{WC}$} be the set of all weak compositions.
+\begin{equation*}
+\label{eq : M+L}
+M_{\al} = \sum\limits_{i_1 < \cdots < i_p} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p},\;\;\;\;\;\; L_{\al} = \sum\limits_{\substack{i_1 \leq \cdots \leq i_n;\\j\in \Des(\al) \Rightarrow i_j<i_{j+1}}} x_{i_1}x_{i_2} \cdots x_{i_n}.
+\end{equation*}
 
-\item We write \defn{$\alpha_{i}$} for the $i$-th entry of a weak composition
-$\alpha$.
-
-\item The \defn{size} of a weak composition $\alpha$ is defined to be
-$\left\vert \alpha\right\vert :=\alpha_{1}+\alpha_{2}+\alpha_{3}+\cdots$.
-
-\item A \defn{partition} means a weak composition $\alpha$ satisfying
-$\alpha_{1}\geq\alpha_{2}\geq\alpha_{3}\geq\cdots$.
-
-\item A \defn{partition of $n$} means a partition $\alpha$ with $\left\vert
-\alpha\right\vert =n$.
-
-\item We let \defn{$\operatorname*{Par}$} denote the set of all partitions.
-
-% For each $n\in\mathbb{Z}$, we let \defn{$\operatorname*{Par}\nolimits_{n}$}
-% denote the set of all partitions of $n$.
-
-\item We often omit trailing zeroes from partitions:
-
-e.g., $\left(  3,2,1,0,0,0,\ldots\right)  =\left(  3,2,1\right)  =\left(
-3,2,1,0\right)  $.
-
-\item The partition $\left(  0,0,0,\ldots\right)  =\left(  {}\right)  $ is
-called the \defn{empty partition} and denoted by \defn{$\varnothing$}.
+\item As an example, for $n=3$, we have
+\begin{gather*}
+M_{(2,1)}=\sum_{i<j}x_{i}^{2}x_{j}=x_{1}^{2}x_{2}+x_{1}%
+^{2}x_{3}+x_{2}^{2}x_{3}+x_{1}^{2}x_{4}+x_{2}^{2}x_{4}+x_{3}^{2}x_{4}+\dots,\\
+L_{(2,1)}=\sum_{i\leq j <k}x_{i}x_{j}x_k=x_{1}^{2}x_{2}+x_{1}%
+^{2}x_{3}+x_{1}x_{2}x_3+x_{2}^{2}x_{3}+x_{1}^{2}x_{4}+x_{1}
+x_{2}x_{4}+x_{2}^{2}x_{4}+\dots.
+\end{gather*}
+\item The sets $\left\{M_\al\right\}_{n\in \NN,\ \al\in \Comp(n)}$
+and $\left\{L_\al\right\}_{n\in \NN,\ \al\in \Comp(n)}$
+are two bases of the $\kk$-module $\QSym$.
+They are related through
+\begin{equation}
+\label{eq : LM} L_{\al} = \sum_{{\substack{\beta \in \Comp(n);\\\Des(\alpha) \subseteq \Des(\beta)}}} M_{\beta}.
+\end{equation}
 \end{itemize}
 
-\subsection{Symmetric functions: notation, 3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Peak and monomial peak functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-\item We will use the notation \defn{$m^{k}$} for \textquotedblleft%
-$\underbrace{m,m,\ldots,m}_{k\text{ times}}$\textquotedblright\ in partitions.
-
-(For example, $\left(  2,1^{4}\right)  =\left(  2,1,1,1,1\right)  $.)
-
-\item For any weak composition $\alpha$, we let \defn{$\mathbf{x}^{\alpha}$}
-denote the monomial $x_{1}^{\alpha_{1}}x_{2}^{\alpha_{2}}x_{3}^{\alpha_{3}%
-}\cdots$. It has degree $\left\vert \alpha\right\vert $.
-
-\item The ring
-\defn{$\mathbf{k}\left[  \left[  x_{1},x_{2},x_{3},\ldots\right]
-\right]  $} consists of formal infinite $\mathbf{k}$-linear combinations of
-monomials $\mathbf{x}^{\alpha}$. These combinations are called \defn{formal power series}.
-
-\item The \defn{symmetric functions} are the formal power series
-$f\in\mathbf{k}\left[  \left[  x_{1},x_{2},x_{3},\ldots\right]  \right]  $
-that are
-
-\begin{itemize}
-\item \defn{of bounded degree} (i.e., all monomials in $f$ have degrees $<N$
-for some $N=N_{f}$);
-
-\item \defn{symmetric} (i.e., permuting the $x_{i}$ does not change $f$).
+\item In \cite{Ste97}, Stembridge introduces \defn{peak} quasisymmetric functions. Given $n \in \NN$ and $\al \in \Odd(n)$,
+\begin{equation*}
+\label{eq : K}
+K_{\al} = \sum\limits_{\substack{i_1 \leq \dots \leq i_n;\\j\in \Peak(\al) \Rightarrow  i_{j-1}<i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|} x_{i_1}x_{i_2} \cdots x_{i_n}.
+\end{equation*}
+\item  Hsiao defines in \cite{Hsi07} the \defn{monomial peak functions}. For any odd composition $\al =(\al_1,\al_2,\dots,\al_p)\in \Odd(n)$, let
+\begin{equation}
+\label{eq : monpeak}
+\eta_{\al} = (-1)^{(n-\ell(\al))/2}\sum\limits_{\substack{i_1 \leq \dots \leq i_p}}2^{|\{i_1,i_2,\dots,i_p\}|} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p}.
+\end{equation}
+\item An identity similar to Equation (\ref{eq : LM}) relates peak and monomial peak functions:
+\begin{equation}
+\label{eq : KE} K_{\al} = \sum_{{\substack{\beta \in \Odd(n);\\ \Peak(\beta) \subseteq \Peak(\al)}}} \eta_{\beta}.
+\end{equation}
 \end{itemize}
 
-\item We let
-\[
-\defnm{\Lambda}=\left\{  \text{symmetric functions }f\in\mathbf{k}\left[
-\left[  x_{1},x_{2},x_{3},\ldots\right]  \right]  \right\}  .
-\]
-This is a $\mathbf{k}$-subalgebra of $\mathbf{k}\left[  \left[  x_{1}%
-,x_{2},x_{3},\ldots\right]  \right]  $, graded by the degree.
-\end{itemize}
-
-\subsection{Symmetric functions: $m$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Posets and $P$-partitions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{sec : poset}
 
 \begin{itemize}
-\item The $\mathbf{k}$-module $\Lambda$ has several bases indexed by the set
-$\operatorname*{Par}$.
-
-\item The \defn{monomial basis} $\left(  m_{\lambda}\right)  _{\lambda
-\in\operatorname*{Par}}$:
-
-For each partition $\lambda$, we define the
-\defn{monomial symmetric function
-}$m_{\lambda}\in\Lambda$ by
-\[
-m_{\lambda}=\sum_{\substack{\alpha\text{ is a weak composition;}\\\alpha\text{
-can be obtained from }\lambda\\\text{by permuting entries}}}\mathbf{x}%
-^{\alpha}.
-\]
-For example:%
-\[
-m_{\left(  2,2,1\right)  }=\sum_{i<j<k}x_{i}^{2}x_{j}^{2}x_{k}+\sum
-_{i<j<k}x_{i}^{2}x_{j}x_{k}^{2}+\sum_{i<j<k}x_{i}x_{j}^{2}x_{k}^{2}.
-\]
-
-
-The family $\left(  m_{\lambda}\right)  _{\lambda\in\operatorname*{Par}}$ is a
-basis of the $\mathbf{k}$-module $\Lambda$, called the \defn{monomial basis}.
-\end{itemize}
-
-\subsection{Symmetric functions: $h$}
-
+\item A \defn{labelled poset} $P=([n],<_P)$ is an arbitrary partial order $<_P$ on the set $[n]$. 
+\item Let $P = ([n],<_P)$ be a labelled poset.
+A \defn{$P$-partition} is a map $f: [n]\longrightarrow \PP$ that satisfies the two following conditions:
 \begin{itemize}
-\item The \defn{complete basis} $\left(  h_{\lambda}\right)  _{\lambda
-\in\operatorname*{Par}}$:
-
-For each $n\in\mathbb{Z}$, define the \defn{complete homogeneous symmetric
-function $h_{n}$} by%
-\[
-h_{n}=\sum_{i_{1}\leq i_{2}\leq\cdots\leq i_{n}}x_{i_{1}}x_{i_{2}}\cdots
-x_{i_{n}}=\sum_{\substack{\alpha\in\operatorname*{WC};\\\left\vert
-\alpha\right\vert =n}}\mathbf{x}^{\alpha}
-=
-\sum_{\substack{\lambda \in \Par; \\ \left|\lambda\right| = n}}m_{\lambda}.
-\]
-For example,%
-\begin{align*}
-h_{1}  &  =x_{1}+x_{2}+x_{3}+\cdots;\\
-h_{2}  &  =\sum_{i\leq j}x_{i}x_{j}=\sum_{i}x_{i}^{2}+\sum_{i<j}x_{i}x_{j};\\
-h_{0}  &  =1;\\
-h_{n}  &  =0\ \ \ \ \ \ \ \ \ \ \text{for all }n<0.
-\end{align*}
-For each partition $\lambda$, we define
-\[
-\defnm{h_{\lambda}}=h_{\lambda_{1}}h_{\lambda_{2}}h_{\lambda_{3}}\cdots
-\in\Lambda.
-\]
-
-
-The family $\left(  h_{\lambda}\right)  _{\lambda\in\operatorname*{Par}}$ is a
-basis of the $\mathbf{k}$-module $\Lambda$.
+\item[(i)] If $i <_P j$, then $f(i) \leq f(j)$.
+\item[(ii)] If $i <_P j$ and $i > j$, then $f(i) < f(j)$.
 \end{itemize}
-
-\subsection{Symmetric functions: $e$}
-
+\item Let $\PP^{\pm}=\left\{-,+\right\} \times \PP$. We equip the set $\PP^{\pm}$ with a total order given by $-1<1<-2<2<-3<\dots$. 
+Let $P = ([n],<_P)$ be a labelled poset.
+An \defn{enriched $P$-partition} is a map $f: [n]\longrightarrow \PP^{\pm} $ that satisfies the following two conditions:
 \begin{itemize}
-\item The \defn{elementary basis} $\left(  e_{\lambda}\right)  _{\lambda
-\in\operatorname*{Par}}$:
+\item[(i)] If $i <_P j$ and $i < j$, then $f(i) < f(j)$ or $f(i) = f(j) \in \PP$.
+\item[(ii)] If $i <_P j$ and $i>j$, then $f(i) < f(j)$ or $f(i) = f(j) \in -\PP$.
+\end{itemize} 
+\item A more general concept was defined in \cite{Gri18}: Let $\mathcal{Z}$ be a subset of the totally ordered set $\PP^{\pm}$ and $P=([n],<_P)$ be a labelled poset.
+A \defn{$\mathcal{Z}$-enriched $P$-partition} is
+an enriched $P$-partition $f : [n] \longrightarrow \PP^{\pm} $ with $f([n]) \subseteq \mathcal{Z}$.
+Let $\mathcal{L}_\mathcal{Z}(P)$ denote the set of $\mathcal{Z}$-enriched $P$-partitions.
 
-For each $n\in\mathbb{Z}$, define the \defn{elementary symmetric function
-$e_{n}$} by%
-\[
-e_{n}=\sum_{i_{1}<i_{2}<\cdots<i_{n}}x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}}%
-=\sum_{\substack{\alpha\in\operatorname*{WC}\cap\left\{  0,1\right\}
-^{\infty};\\\left\vert \alpha\right\vert =n}}\mathbf{x}^{\alpha}=m_{\left(
-1^{n}\right)  }.
-\]
-For example,%
-\begin{align*}
-e_{1}  &  =x_{1}+x_{2}+x_{3}+\cdots;\\
-e_{2}  &  =\sum_{i<j}x_{i}x_{j};\\
-e_{0}  &  =1;\\
-e_{n}  &  =0\ \ \ \ \ \ \ \ \ \ \text{for all }n<0.
-\end{align*}
-For each partition $\lambda$, we define
-\[
-\defnm{e_{\lambda}}=e_{\lambda_{1}}e_{\lambda_{2}}e_{\lambda_{3}}\cdots
-\in\Lambda.
-\]
+\item Let $X = \left\{x_1,x_2,x_3,\ldots\right\}$, $P =([n],<_P)$, and $\mathcal{Z} \subseteq \PP^{\pm}$. Define the  \defn{$\mathcal{Z}$-generating function of $P$} as the formal power series
+\begin{align}
+\label{eq : GammaTrad}
+\Gamma_{\mathcal{Z}}([n], <_P) &= \sum_{f \in \mathcal{L}_\mathcal{Z}([n],<_P)}\ \ \prod_{1\leq i \leq n}x_{|f(i)|} .
+\end{align}
+\item Given $\pi \in S_n$, let $P_\pi = ([n],<_\pi)$ denote the labelled poset where the order relation $<_\pi$ is such that $\pi_i <_\pi \pi_j$ if and only if $i < j$ (see Figure \ref{fig : ppart}).
+\begin{figure}[htbp]
+\begin{center}
+ \includegraphics[scale=0.20]{PPart}\caption{The labelled poset associated to permutation $\pi$.}
+ \label{fig : ppart}
+ \end{center}
+ \end{figure}
 
-
-The family $\left(  e_{\lambda}\right)  _{\lambda\in\operatorname*{Par}}$ is a
-basis of the $\mathbf{k}$-module $\Lambda$.
-\end{itemize}
-
-\subsection{Symmetric functions: $p$}
-
-\begin{itemize}
-\item The \defn{power-sum symmetric functions} $p_{n}$:
-
-For each positive integer $n$, define the \defn{power-sum symmetric function
-$p_{n}$} by%
-\[
-p_{n}=x_{1}^{n}+x_{2}^{n}+x_{3}^{n}+\cdots=m_{\left(  n\right)  }.
-\]
-
-
-We can make a basis out of (products of) $p_{n}$'s when $\mathbf{k}$ is a
-$\mathbb{Q}$-algebra.
-\end{itemize}
-
-\subsection{Symmetric functions: $s$}
-
-\begin{itemize}
-\item The \defn{Schur basis }$\left(  s_{\lambda}\right)  _{\lambda
-\in\operatorname*{Par}}$:
-
-For each partition $\lambda$, we can define the \defn{Schur function}
-$s_{\lambda}$ in many equivalent ways, e.g.:
-
-\begin{itemize}
-\item We have%
-\[
-s_{\lambda}=\sum_{\substack{T\text{ is a semistandard}\\\text{Young tableau of
-shape }\lambda}}\mathbf{x}_{T},
-\]
-where $\mathbf{x}_{T}$ denotes the monomial obtained by multiplying the
-$x_{i}$ for all entries $i$ of $T$.
-
-\item If $\lambda=\left(  \lambda_{1},\lambda_{2},\ldots,\lambda_{\ell
-}\right)  $, then%
-\[
-s_{\lambda}=\det\left(  \left(  h_{\lambda_{i}-i+j}\right)  _{1\leq i\leq
-\ell,\ 1\leq j\leq\ell}\right)
-\]
-(the \defn{first Jacobi--Trudi formula}).
-\end{itemize}
-
-The family $\left(  s_{\lambda}\right)  _{\lambda\in\operatorname*{Par}}$ is a
-basis of the $\mathbf{k}$-module $\Lambda$.
-\end{itemize}
-
-\section{Petrie functions}
-
-\subsection{Petrie functions: definition of $G(k)$}
-
-\begin{itemize}
-\item \nowbox
-\begin{definition}{Petrie function $G(k)$}{def.petGk}
-For any positive integer $k$, set%
-\begin{align*}
-\defnm{G\left( k\right)}  &  =\sum_{\substack{\alpha\in\operatorname*{WC}%
-;\\\alpha_{i}<k\text{ for all }i}}\mathbf{x}^{\alpha}\\
-&  =\sum\left(  \text{all monomials whose exponents are all }<k\right) \\
-&  \in\mathbf{k}\left[  \left[  x_{1},x_{2},x_{3},\ldots\right]  \right]
-\ \ \ \ \ \ \ \ \ \ \left(  \text{not }\in\Lambda\text{ in general}\right)  .
-\end{align*}
-\end{definition}
-
-(Recall:
-$\operatorname{WC} := \left\{\text{weak compositions}\right\}$
-and $\mathbf{x}^\alpha := x_1^{\alpha_1} x_2^{\alpha_2} x_3^{\alpha_3} \cdots$.)
-
+\item Set $L_{\pi}= \Gamma_{\PP}([n],<_\pi)$ and $K_{\pi}= \Gamma_{\PP^\pm}([n],<_\pi)$. The function $L_\pi$ is equal to the fundamental quasisymmetric function $L_\al$ indexed by the unique composition $\al$ such that $\Des(\al) = \Des(\pi)$. Similarly, $K_\pi$ is equal to the peak function $K_\al$ indexed by the unique odd composition $\al$ such that $\Peak(\al) = \Peak(\pi)$. 
+%\end{proposition}
+%This description leads to easy product formulas for both fundamental and peak quasisymmetric functions. Indeed, one has the following proposition.
+%\begin{proposition}[\cite{Ges84, Ste97}]
+\item Given two permutations $\pi \in S_n$ and $\sigma \in S_m$\begin{equation}
+\label{eq : GGG}
+\Gamma_{\mathcal{Z}}([n],<_\pi)\Gamma_{\mathcal{Z}}([m],<_\sigma) = \sum_{\gamma \in \pi \shuffle \sigma}\Gamma_{\mathcal{Z}}([n+m],<_\gamma) .
+\end{equation}
+\begin{equation}
+L_{\pi}L_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}L_{\gamma}, \qquad
+K_{\pi}K_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}K_{\gamma}.
+\end{equation}
 \end{itemize}
 
 \subsection{Petrie functions: definition of $G(k,m)$}
