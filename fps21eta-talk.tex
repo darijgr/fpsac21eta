@@ -1,5 +1,5 @@
 \documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
-\usepackage[paperwidth=21cm,paperheight=500cm,margin=1in]{geometry}
+\usepackage[paperwidth=21cm,paperheight=195cm,margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{array}
@@ -259,6 +259,10 @@
 \NOEXPAND{\defn}[1]{\defn}
 \NOEXPAND{\defnm}[1]{\defnm}
 \fi
+
+\usepackage[backend=bibtex]{biblatex}
+\addbibresource{biblio.bib}
+
 \begin{document}
 
 \title{Weighted posets and the enriched monomial basis of QSym [slides]}
@@ -542,4 +546,144 @@ be a composition. Then,
 \]
 
 \end{theorem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The product rule for the enriched monomial basis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Weighted posets}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}{Labelled weighted posets}{def.weighted}
+A \textbf{labelled weighted poset} is a triple $P = ([n], <_P, \epsilon)$ where $([n], <_P)$ is a labelled poset and $\epsilon : [n] \longrightarrow \PP$ is a map (called the \textbf{weight function}).
+In a labelled weighted poset each node is marked with two numbers: its label $i \in [n]$ and its weight $\epsilon(i)$.
+%
+\begin{center}
+ \includegraphics[scale=0.16]{Poset.png}
+ \label{fig : poset}
+ \end{center}
+ %
+ For any set $\mathcal{Z}\subseteq \PP^{\pm}$, we define the generating function $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ of the labelled weighted poset $([n], <_P, \epsilon)$ by
+\begin{equation}
+\label{eq : weightGamma}
+\Gamma_\mathcal{Z}([n], <_P, \epsilon) = \sum_{f \in \mathcal{L}_\mathcal{Z}([n], <_P)}\ \ \prod_{1\leq i \leq n}x^{\epsilon(i)}_{|f(i)|} .
+\end{equation} 
+ \end{definition}
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Universal quasisymmetric functions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{definition}{Universal quasisymmetric functions}{def.universal}
+Let $\alpha = (\alpha_1, \alpha_2, \ldots, \alpha_n)$ be a composition.
+Let $\pi=\pi_1\dots\pi_n$ be a permutation in $S_n$.
+Let $P_{\pi,\alpha} = ([n],<_\pi,\alpha)$ denote the labelled weighted poset composed of the labelled poset $([n], <_\pi)$ and the weight function sending the vertex labelled $\pi_i$ to $\alpha_i$.
+\begin{center}
+\includegraphics[scale=0.20]{PosetMonomial.pdf}
+ \label{fig : monomial}
+ \end{center}
+We define the \textbf{universal quasisymmetric function} $U^\mathcal{Z}_{\pi,\alpha}$ as the generating function
+\begin{equation}
+U^\mathcal{Z}_{\pi,\alpha} = \Gamma_\mathcal{Z}([n],<_\pi, \alpha).
+\end{equation}
+\end{definition}
+
+\begin{proposition}{Specialisation of universal quasisymmetric functions}{prop.spec}
+\indent Let $n \in \NN$. Let $id_{n}$ and $\overline{id_{n}}$ denote the two permutations in $S_n$ given by $id_{n} = 1~2~3\dots n$ and $\overline{id_{n}} = n~n-1~n-2\dots 1$ (in one-line notation). Denote further $(1^n)$ the composition of $n$ with $n$ entries equal to $1$. Let $\pi \in S_n$. Then,
+\begin{align}
+\label{eq : UE} U^\mathcal{\PP}_{\pi,(1^n)} = L_\pi, ~~~~~~U^\mathcal{\PP^\pm}_{\pi,(1^n)} = K_\pi, ~~~~~~U^{\mathcal{\PP}}_{\overline{id_{n}},\alpha} = M_{\alpha},
+~~~~~U^{\mathcal{\PP^\pm}}_{id_{n},\alpha} = \eta_{\alpha}.
+\end{align}
+
+\end{proposition}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Product rule}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}{Product of universal quasisymmetric functions}{thm.prod.universal}
+Let $\mathcal{Z}$ be a subset of $\PP^{\pm}$.
+Let $\pi$ and $\sigma$ be two permutations in $S_n$ and $S_m$, and let $\alpha = (\al_1,\dots,\al_n)$ and $\beta = (\be_1,\dots,\be_m)$ be two compositions with $n$ and $m$ entries.
+The product of two universal quasisymmetric functions is given by
+\begin{equation}
+\label{eq : UU}
+U^\mathcal{Z}_{\pi,\alpha}U^\mathcal{Z}_{\sigma,\beta}=\sum_{(\tau,\gamma)\in(\pi,\alpha)\shuffle(\sigma,\beta)}U^\mathcal{Z}_{\tau,\gamma} .
+\end{equation}
+\end{theorem}
+\begin{proof}
+The proof is iterative and uses the following decomposition of posets.
+%
+\begin{figure}[htbp]
+\begin{center}
+ \includegraphics[scale=0.22]{PosetBij.png}\caption{Decomposition of a double chain weighted poset into two posets with one incomparable pair less.}
+ \label{fig : prodmonomial}
+ \end{center}
+ \end{figure}
+ %
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Product of  enriched monomials}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Let $\alpha$ and $\beta$ be two compositions with $n$ and $m$ entries. Equations (\ref{eq : UE}) and (\ref{eq : UU}) imply:
+\begin{align}
+\label{eq : MME}
+\eta_\al \eta_\beta = U^{\PP^\pm}_{id_{n},\alpha}U^{\PP^\pm}_{id_{m},\beta}=\sum_{(\tau,\gamma)\in(id_{n},\alpha)\shuffle(id_{m},\beta)}U^{\mathcal{\PP^\pm}}_{\tau,\gamma} .
+\end{align}
+\begin{definition}{Composition reduction}{def.comp.reduc}
+Let $\al = (\al_1, \dots, \al_n)$ be a composition with $n$ entries. Let $\al^{\downarrow\downarrow i}$ denote the following composition with $n-2$ entries:
+\begin{equation*}
+\al^{\downarrow\downarrow i} = (\al_1, \dots, \al_{i-2},{\al_{i-1}+\al_i+\al_{i+1}},\al_{i+2},\dots ,\al_n) .
+\end{equation*}  
+Furthermore, for any peak-lacunar subset $I\subseteq [n-1]$, we set $\al^{\downarrow\downarrow I}= \al$ if $I=\varnothing$ and
+\[
+\al^{\downarrow\downarrow I}
+= \left( \left( \cdots \left( \al^{\downarrow i_k} \right) \cdots \right)^{\downarrow i_2} \right)^{\downarrow i_1} ,
+\]
+where $i_1, i_2, \ldots, i_k$ are the elements of $I \neq \varnothing$ in increasing order.
+As an example, let $\al = (2,1,4,3,2)$. We have $\al^{\downarrow\downarrow 3} = (2,8,2)$ and $\al^{\downarrow \downarrow\{2,4\}} = (12).$
+
+\end{definition}
+%
+\begin{theorem}{Universal quasisymmetric functions to enriched monomials}{thm.univ.enriched}
+Let $\alpha$ be a composition with $n$ entries and $\pi$ a permutation in $S_n$. We have
+\begin{equation}
+\label{eq : U as sum}
+U^{\PP^\pm}_{\pi,\al} = \sum_{I \subseteq \Peak(\pi)}(-1)^{|I|}\eta_{\al^{\downarrow\downarrow I}} .
+\end{equation}
+\end{theorem}
+\begin{proof}[Proof (sketch).]
+From the definition of  $U^{\PP^\pm}_{\pi,\al}$, one can obtain without too much trouble that
+\begin{equation*}
+U^{\PP^\pm}_{\pi,\al} = \sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in \Peak(\pi) \Rightarrow \lnot \left( i_{j-1}=i_{j}=i_{j+1}\right)}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n} .
+\end{equation*}
+By the inclusion-exclusion principle, this can be rewritten as
+\begin{equation*}
+U^{\PP^\pm}_{\pi,\al} =\sum_{I \subseteq \Peak(\pi)}(-1)^{|I|} \underbrace{\sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in I \Rightarrow  i_{j-1}=i_{j}=i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n}}_{\substack{= \eta_{\al^{\downarrow\downarrow I}}\\}} .
+\qedhere
+\end{equation*}
+\end{proof}
+%
+\begin{theorem}{Product rule for enriched monomials}{theorem : EEE}
+Let $\al=(\al_1,\dots,\al_n)$ and $\beta=(\be_1,\dots,\be_m)$ be two compositions. Given a composition $\gamma$ obtained by shuffling $\al$ and $\be$ (we shall denote this by $\gamma \in \al\shuffle\be$), let $S_\beta(\gamma)$ be the set of the positions of the entries of $\beta$ in $\gamma$. Denote further $S_\beta(\gamma)-1 =\{i-1|i \in S_\beta(\gamma)\}$. Then,
+\begin{equation}
+\label{eq : EEE}
+\eta_\al \eta_\beta
+= \sum_{\substack{\gamma \in \al \shuffle \be ;\\
+                   I\subseteq \left(S_{\be}(\gamma)\setminus (S_{\be}(\gamma)-1)\right) \setminus \left\{1\right\}}}
+(-1)^{|I|}\eta_{\gamma^{\downarrow\downarrow I}} .
+\end{equation}
+The sum ranges not over compositions $\gamma$ but over ways to shuffle $\al$ with $\be$. Thus, the same $\gamma$ can appear in several addends of the sum.\\
+As an example, one has
+\begin{align*}
+\eta_{(1,1)}\eta_{(2,3)} &= \eta_{(1, 1, 2, 3)} + \eta_{(1, 2, 1, 3)} -\eta_{(4, 3)} + \eta_{(2,1,1,3)}+\eta_{(1,2,3,1)}\\
+&\qquad -\eta_{(1,6)}+\eta_{(2,1,3,1)}-\eta_{(2,5)}+\eta_{(2,3,1,1)}-\eta_{(6,1)},\\
+\eta_{(1,2)}\eta_{(2)} &=  \eta_{(2,1,2)} +   2\eta_{(1,2,2)} - \eta_{(5)}.
+\end{align*}
+\end{theorem}
+\begin{proof}[Proof (sketched).]
+Recall \eqref{eq : MME}, and rewrite the right-hand side using \eqref{eq : U as sum}.
+Let $(\tau,\gamma)$ be a coshuffle in $(id_n,\al)\shuffle(id_m,\be)$. The index $i$ belongs to $\Peak(\tau)$ if and only if $\tau_i$ is a letter of $n+id_m$ and $\tau_{i+1}$ is a letter of $id_n$ and we have $i > 1$. That is, if and only if $i$ is the index of an entry of $\beta$ in $\gamma$ and $i+1$ is the index of an entry of $\al$.
+Thus, $\Peak(\tau) = \left(S_{\be}(\gamma)\setminus (S_{\be}(\gamma)-1)\right) \setminus \left\{1\right\}$.
+Therefore, we obtain \eqref{eq : EEE}.
+\end{proof}
+\printbibliography
 \end{document}

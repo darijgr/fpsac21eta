@@ -1,0 +1,116 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{Gri18}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GD}{%
+         family={Grinberg},
+         familyi={G\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GD1}
+    \strng{fullhash}{GD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{4}
+    \field{pages}{P4.17}
+    \field{title}{Shuffle-compatible permutation statistics II: the exterior
+  peak set}
+    \field{volume}{25}
+    \field{journaltitle}{Electronic Journal of Combinatorics}
+    \field{year}{2018}
+  \endentry
+
+  \entry{GriRei20}{misc}{}
+    \name{author}{2}{}{%
+      {{hash=GD}{%
+         family={Grinberg},
+         familyi={G\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RV}{%
+         family={Reiner},
+         familyi={R\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GDRV1}
+    \strng{fullhash}{GDRV1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{note}{arXiv:1409.8356v7}
+    \field{title}{{H}opf Algebras in Combinatorics}
+    \verb{url}
+    \verb http://www.cip.ifi.lmu.de/~grinberg/algebra/HopfComb-sols.pdf
+    \endverb
+    \field{year}{2020}
+  \endentry
+
+  \entry{Hsi07}{unpublished}{}
+    \name{author}{1}{}{%
+      {{hash=HSK}{%
+         family={Hsiao},
+         familyi={H\bibinitperiod},
+         given={S.\bibnamedelima K.},
+         giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HSK1}
+    \strng{fullhash}{HSK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Structure of the peak Hopf algebra of quasisymmetric
+  functions}
+    \field{year}{2007}
+  \endentry
+
+  \entry{Ste97}{article}{}
+    \name{author}{1}{}{%
+      {{hash=SJ}{%
+         family={Stembridge},
+         familyi={S\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SJ1}
+    \strng{fullhash}{SJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{number}{2}
+    \field{pages}{763\bibrangedash 788}
+    \field{title}{Enriched $P$-partitions.}
+    \field{volume}{349}
+    \field{journaltitle}{Trans. Amer. Math. Soc.}
+    \field{year}{1997}
+  \endentry
+\enddatalist
+\endinput
