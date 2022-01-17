@@ -276,7 +276,11 @@
 \url{https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2021/58Grinberg.pdf}}%
 \newline
 
-\begin{tcolorbox}[colback=cyan!5,colframe=cyan!75!black, fonttitle=\bfseries,title=Summary of our work] Hsiao defines in \cite{Hsi07} the \textbf{monomial peak functions} $\eta_{\al}$: a class of quasisymmetric functions indexed by \textbf{odd compositions} of $n$. They provide a monomial-like basis to Stembridge's algebra of peaks \cite{Ste97} and are related to Stembridge peak functions $K_\al$ through
+\begin{tcolorbox}[colback=cyan!5,colframe=cyan!75!black, fonttitle=\bfseries,title=Summary of our work] Hsiao defines in \cite{Hsi07} the \textbf{monomial peak functions} $\eta_{\al}$: a class of quasisymmetric functions indexed by \textbf{odd compositions} of $n$.
+\begin{equation*}
+\eta_{\al} = (-1)^{(n-\ell(\al))/2}\sum\limits_{\substack{i_1 \leq \dots \leq i_p}}2^{|\{i_1,i_2,\dots,i_p\}|} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p}.
+\end{equation*}
+They provide a monomial-like basis to Stembridge's algebra of peaks \cite{Ste97} and are related to Stembridge peak functions $K_\al$ through
 \begin{equation*}
 K_{\al} = \sum_{{\substack{\beta \in \Odd(n);\\ \Peak(\beta) \subseteq \Peak(\al)}}} \eta_{\beta}.
 \end{equation*}
