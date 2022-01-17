@@ -315,7 +315,7 @@ In the present work:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-\item $\PP =\left\{1,2,\dots\right\}$, $\NN = \left\{0,1,\ldots\right\}$, $[n] = \left\{1,2,\dots, n\right\}$, $S_n$ the symmetric group on $[n]$
+\item $\defnm{\PP} =\left\{1,2,\dots\right\}$, $\defnm{\NN} = \left\{0,1,\ldots\right\}$, $\defnm{[n]} = \left\{1,2,\dots, n\right\}$, $\defnm{S_n}$ the symmetric group on $[n]$.
 
 \item \defn{$\Comp(n)$} is the set of \defn{compositions} $\al = (\al_1, \al_2, \dots, \al_p)$ of $n$. \defn{$\Odd(n)$} is the set of \defn{odd compositions} of $n$ containing only odd integers.  Let $\ell(\al) := p$, $|\al| := \sum_i \al_i = n$.
 
@@ -326,7 +326,7 @@ $\Des(\pi) = \{1\leq i\leq n-1| \pi(i)>\pi(i+1)\}.$
 \item The \defn{peak set} $\Peak(\pi)$ of $\pi$ is $
 \Peak(\pi) = \{2\leq i\leq n-1| \pi(i-1)<\pi(i)>\pi(i+1)\}.$
 
-\item Compositions of $n$ are in bijection with descent sets of permutations in $S_n$ while odd compositions of $n$, are in one-to-one correspondence with peak sets. Denote \defn{$Des(\al)$} (\defn{$Peak(\al)$}) the descent set (peak set) assiociated with  (odd) composition $\al$.
+\item Compositions of $n$ are in bijection with descent sets of permutations in $S_n$, while odd compositions of $n$ are in (a more complicated) bijection with peak sets. Denote \defn{$\Des(\al)$} (resp. \defn{$\Peak(\al)$}) the descent set (resp., peak set) associated with composition (resp., odd composition) $\al$.
 
 \end{itemize}
 
@@ -340,7 +340,7 @@ $\Des(\pi) = \{1\leq i\leq n-1| \pi(i)>\pi(i+1)\}.$
 
 \begin{equation*}
 \label{eq : M+L}
-M_{\al} = \sum\limits_{i_1 < \cdots < i_p} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p},\;\;\;\;\;\; L_{\al} = \sum\limits_{\substack{i_1 \leq \cdots \leq i_n;\\j\in \Des(\al) \Rightarrow i_j<i_{j+1}}} x_{i_1}x_{i_2} \cdots x_{i_n}.
+M_{\al} = \sum\limits_{i_1 < \cdots < i_p} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p},\;\;\;\;\;\;\qquad L_{\al} = \sum\limits_{\substack{i_1 \leq \cdots \leq i_n;\\j\in \Des(\al) \Rightarrow i_j<i_{j+1}}} x_{i_1}x_{i_2} \cdots x_{i_n}.
 \end{equation*}
 
 \item As an example, for $n=3$, we have
@@ -353,7 +353,7 @@ x_{2}x_{4}+x_{2}^{2}x_{4}+\dots.
 \end{gather*}
 \item The sets $\left\{M_\al\right\}_{n\in \NN,\ \al\in \Comp(n)}$
 and $\left\{L_\al\right\}_{n\in \NN,\ \al\in \Comp(n)}$
-are two bases of the $\kk$-module $\QSym$.
+are two bases of the $\kk$-module $\QSym$ of quasisymmetric functions.
 They are related through
 \begin{equation}
 \label{eq : LM} L_{\al} = \sum_{{\substack{\beta \in \Comp(n);\\\Des(\alpha) \subseteq \Des(\beta)}}} M_{\beta}.
@@ -365,15 +365,15 @@ They are related through
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{itemize}
-\item In \cite{Ste97}, Stembridge introduces \defn{peak} quasisymmetric functions. Given $n \in \NN$ and $\al \in \Odd(n)$,
+\item In \cite{Ste97}, Stembridge introduces \defn{peak quasisymmetric functions}. Given $n \in \NN$ and $\al \in \Odd(n)$, the corresponding function is
 \begin{equation*}
 \label{eq : K}
-K_{\al} = \sum\limits_{\substack{i_1 \leq \dots \leq i_n;\\j\in \Peak(\al) \Rightarrow  i_{j-1}<i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|} x_{i_1}x_{i_2} \cdots x_{i_n}.
+K_{\al} = \sum\limits_{\substack{i_1 \leq \dots \leq i_n;\\j\in \Peak(\al) \Rightarrow  i_{j-1}<i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|} x_{i_1}x_{i_2} \cdots x_{i_n} \in \QSym.
 \end{equation*}
-\item  Hsiao defines in \cite{Hsi07} the \defn{monomial peak functions}. For any odd composition $\al =(\al_1,\al_2,\dots,\al_p)\in \Odd(n)$, let
+\item  Hsiao defines in \cite{Hsi07} the \defn{monomial peak functions}. For any odd composition $\al =(\al_1,\al_2,\dots,\al_p)\in \Odd(n)$, the corresponding function is
 \begin{equation}
 \label{eq : monpeak}
-\eta_{\al} = (-1)^{(n-\ell(\al))/2}\sum\limits_{\substack{i_1 \leq \dots \leq i_p}}2^{|\{i_1,i_2,\dots,i_p\}|} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p}.
+\eta_{\al} = (-1)^{(n-\ell(\al))/2}\sum\limits_{\substack{i_1 \leq \dots \leq i_p}}2^{|\{i_1,i_2,\dots,i_p\}|} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p} \in \QSym.
 \end{equation}
 \item An identity similar to Equation (\ref{eq : LM}) relates peak and monomial peak functions:
 \begin{equation}
@@ -394,17 +394,24 @@ A \defn{$P$-partition} is a map $f: [n]\longrightarrow \PP$ that satisfies the t
 \item[(i)] If $i <_P j$, then $f(i) \leq f(j)$.
 \item[(ii)] If $i <_P j$ and $i > j$, then $f(i) < f(j)$.
 \end{itemize}
-\item Let $\PP^{\pm}=\left\{-,+\right\} \times \PP$. We equip the set $\PP^{\pm}$ with a total order given by $-1<1<-2<2<-3<\dots$. 
+\item Let \defn{$\PP^{\pm}$} be the (unusually) totally ordered set
+\[
+\PP^{\pm} = \set{-1<1<-2<2<-3<3<\dots}
+= \PP \cup \tup{-\PP}.
+\]
 Let $P = ([n],<_P)$ be a labelled poset.
 An \defn{enriched $P$-partition} is a map $f: [n]\longrightarrow \PP^{\pm} $ that satisfies the following two conditions:
 \begin{itemize}
 \item[(i)] If $i <_P j$ and $i < j$, then $f(i) < f(j)$ or $f(i) = f(j) \in \PP$.
 \item[(ii)] If $i <_P j$ and $i>j$, then $f(i) < f(j)$ or $f(i) = f(j) \in -\PP$.
 \end{itemize} 
-\item A more general concept was defined in \cite{Gri18}: Let $\mathcal{Z}$ be a subset of the totally ordered set $\PP^{\pm}$ and $P=([n],<_P)$ be a labelled poset.
+\item A more general concept was defined in \cite{Gri18}:
+
+Let $\mathcal{Z}$ be a subset of % the totally ordered set
+$\PP^{\pm}$, and $P=([n],<_P)$ be a labelled poset.
 A \defn{$\mathcal{Z}$-enriched $P$-partition} is
 an enriched $P$-partition $f : [n] \longrightarrow \PP^{\pm} $ with $f([n]) \subseteq \mathcal{Z}$.
-Let $\mathcal{L}_\mathcal{Z}(P)$ denote the set of $\mathcal{Z}$-enriched $P$-partitions.
+Let \defn{$\mathcal{L}_\mathcal{Z}(P)$} denote the set of $\mathcal{Z}$-enriched $P$-partitions.
 
 \item Let $X = \left\{x_1,x_2,x_3,\ldots\right\}$, $P =([n],<_P)$, and $\mathcal{Z} \subseteq \PP^{\pm}$. Define the  \defn{$\mathcal{Z}$-generating function of $P$} as the formal power series
 \begin{align}
@@ -421,14 +428,18 @@ Let $\mathcal{L}_\mathcal{Z}(P)$ denote the set of $\mathcal{Z}$-enriched $P$-pa
 
 \item Set $L_{\pi}= \Gamma_{\PP}([n],<_\pi)$ and $K_{\pi}= \Gamma_{\PP^\pm}([n],<_\pi)$. The function $L_\pi$ is equal to the fundamental quasisymmetric function $L_\al$ indexed by the unique composition $\al$ such that $\Des(\al) = \Des(\pi)$. Similarly, $K_\pi$ is equal to the peak function $K_\al$ indexed by the unique odd composition $\al$ such that $\Peak(\al) = \Peak(\pi)$. 
 
-\item Given two permutations $\pi \in S_n$ and $\sigma \in S_m$\begin{equation}
-\label{eq : GGG}
-\Gamma_{\mathcal{Z}}([n],<_\pi)\Gamma_{\mathcal{Z}}([m],<_\sigma) = \sum_{\gamma \in \pi \shuffle \sigma}\Gamma_{\mathcal{Z}}([n+m],<_\gamma) .
-\end{equation}
+\item Given two permutations $\pi \in S_n$ and $\sigma \in S_m$, we have
 \begin{equation}
-L_{\pi}L_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}L_{\gamma}, \qquad
-K_{\pi}K_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}K_{\gamma}.
+\label{eq : GGG}
+\Gamma_{\mathcal{Z}}([n],<_\pi)
+\cdot \Gamma_{\mathcal{Z}}([m],<_\sigma)
+= \sum_{\gamma \in \pi \shuffle \sigma}\Gamma_{\mathcal{Z}}([n+m],<_\gamma) .
 \end{equation}
+This recovers the known facts that
+\[
+L_{\pi}L_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}L_{\gamma}, \qquad\qquad
+K_{\pi}K_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}K_{\gamma}.
+\]
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The enriched monomial basis of $\QSym$}
