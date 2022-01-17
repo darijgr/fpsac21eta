@@ -340,7 +340,7 @@ $\Des(\pi) = \{1\leq i\leq n-1| \pi(i)>\pi(i+1)\}.$
 
 \begin{equation*}
 \label{eq : M+L}
-M_{\al} = \sum\limits_{i_1 < \cdots < i_p} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p},\;\;\;\;\;\;\qquad L_{\al} = \sum\limits_{\substack{i_1 \leq \cdots \leq i_n;\\j\in \Des(\al) \Rightarrow i_j<i_{j+1}}} x_{i_1}x_{i_2} \cdots x_{i_n}.
+M_{\al} = \sum\limits_{i_1 < \cdots < i_p} x_{i_1}^{\al_1}x_{i_2}^{\al_2} \cdots x_{i_p}^{\al_p},\;\;\;\;\;\;\qquad L_{\al} = \sum\limits_{\substack{i_1 \leq \cdots \leq i_n;\\j\in \Des(\al) \implies i_j<i_{j+1}}} x_{i_1}x_{i_2} \cdots x_{i_n}.
 \end{equation*}
 
 \item As an example, for $n=3$, we have
@@ -368,7 +368,7 @@ They are related through
 \item In \cite{Ste97}, Stembridge introduces \defn{peak quasisymmetric functions}. Given $n \in \NN$ and $\al \in \Odd(n)$, the corresponding function is
 \begin{equation*}
 \label{eq : K}
-K_{\al} = \sum\limits_{\substack{i_1 \leq \dots \leq i_n;\\j\in \Peak(\al) \Rightarrow  i_{j-1}<i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|} x_{i_1}x_{i_2} \cdots x_{i_n} \in \QSym.
+K_{\al} = \sum\limits_{\substack{i_1 \leq \dots \leq i_n;\\j\in \Peak(\al) \implies  i_{j-1}<i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|} x_{i_1}x_{i_2} \cdots x_{i_n} \in \QSym.
 \end{equation*}
 \item  Hsiao defines in \cite{Hsi07} the \defn{monomial peak functions}. For any odd composition $\al =(\al_1,\al_2,\dots,\al_p)\in \Odd(n)$, the corresponding function is
 \begin{equation}
@@ -450,7 +450,8 @@ K_{\pi}K_{\sigma} = \sum_{\gamma \in \pi \shuffle \sigma}K_{\gamma}.
 \begin{definition}{Enriched monomials}{def.etaalpha}
 For any $n\in\NN$ and any composition $\alpha
 \in \Comp(n)$, we define a quasisymmetric function
-$\eta_{\alpha}\in\QSym$ by%
+$\defnm{\eta_{\alpha}}\in\QSym$ (called an
+\defn{enriched monomial quasisymmetric function}) by
 \begin{equation}
 \eta_{\alpha}=\sum_{\substack{\beta\in \Comp(n);\\
 \Des\left(  \beta\right)  \subseteq \Des\left(  \alpha\right)  }}2^{\ell\left(
@@ -461,15 +462,13 @@ $\eta_{\alpha}\in\QSym$ by%
 
 \textbf{Examples}
 \begin{itemize}
-\item \textbf{(a)} Setting $n=5$ and $\alpha=\left(  1,3,1\right)  $ in this
+\item Setting $n=5$ and $\alpha=\left(  1,3,1\right)  $ in this
 definition, we obtain%
 \begin{align*}
 \eta_{\left(  1,3,1\right)  }  &  =\sum_{\substack{\beta
-\in \Comp(5);\\\Des\left(  \beta\right)  \subseteq \Des\left(
-1,3,1\right)  }}2^{\ell\left(  \beta\right)  }M_{\beta}=\sum_{\substack{\beta
 \in \Comp(5);\\\Des\left(  \beta\right)  \subseteq
 \left\{  1,4\right\}  }}2^{\ell\left(  \beta\right)  }M_{\beta}%
-\ \ \ \ \ \ \ \ \ \ \left(\Des\left(  1,3,1\right)  =\left\{
+\ \ \ \ \ \ \ \ \ \ \left(\text{since }\Des\left(  1,3,1\right)  =\left\{
 1,4\right\}  \right) \\
 &  =2^{\ell\left(  5\right)  }M_{\left(  5\right)  }+2^{\ell\left(
 1,4\right)  }M_{\left(  1,4\right)  }+2^{\ell\left(  4,1\right)  }M_{\left(
@@ -480,7 +479,7 @@ definition, we obtain%
 \end{align*}
 
 
-\item \textbf{(b)} For any positive integer $n$, we have $\eta_{\left(  n\right)
+\item For any positive integer $n$, we have $\eta_{\left(  n\right)
 }=2M_{\left(  n\right)  }$
 (since the composition $\left(n\right)$ satisfies
 $\Des\left(n\right) = \varnothing$).
@@ -492,17 +491,17 @@ Likewise, the empty composition $\varnothing
 \begin{proposition}{Power series expansion}{prop.eta.through-x}Let $n\in\NN$ and $\alpha=\left(  \alpha_{1},\alpha_{2}%
 ,\ldots,\alpha_{p}\right) \in
 \Comp(n)$. Then,
-\[
-\eta_{\alpha}=\sum_{\substack{i_{1}\leq i_{2}\leq\cdots\leq
-i_{n}  ;\\i_j=i_{j+1}\text{ for each }j\in\left[  n-1\right]
-\setminus \Des\left(  \alpha\right)  }}2^{\left\vert \left\{  i_{1},i_{2}%
-,\ldots,i_{n}\right\}  \right\vert }x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}},
-\]
-\[
-\eta_{\alpha}=\sum_{i_{1}\leq i_{2}\leq\cdots\leq i_{p}}2^{\left\vert \left\{
+\begin{align*}
+\eta_{\alpha}
+&=\sum_{\substack{i_{1}\leq i_{2}\leq\cdots\leq
+i_{n}  ;\\j \notin \Des(\alpha) \implies i_j=i_{j+1}}}
+2^{\left\vert \left\{  i_{1},i_{2}%
+,\ldots,i_{n}\right\}  \right\vert }x_{i_{1}}x_{i_{2}}\cdots x_{i_{n}}
+\\
+&=\sum_{i_{1}\leq i_{2}\leq\cdots\leq i_{p}}2^{\left\vert \left\{
 i_{1},i_{2},\ldots,i_{p}\right\}  \right\vert }x_{i_{1}}^{\alpha_{1}}x_{i_{2}%
 }^{\alpha_{2}}\cdots x_{i_{p}}^{\alpha_{p}}.
-\]
+\end{align*}
 \end{proposition}
 
 \begin{proposition}{Relation to fundamental basis}{prop.eta.through-F}Let $n$ be a positive integer. Let $\alpha
@@ -515,21 +514,25 @@ i_{1},i_{2},\ldots,i_{p}\right\}  \right\vert }x_{i_{1}}^{\alpha_{1}}x_{i_{2}%
 
 \end{proposition}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The $\eta_{\alpha}$ as a basis, antipode and coproduct}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{theorem}{Enriched monomials are a basis of QSym}{theorem.eta.basis}
-Assume that $2$ is invertible in $\kk$. Then, the
-family $\left(  \eta_{\alpha}\right)  _{n \in \NN,\ \alpha\in\Comp(n)}$ \textbf{is a basis} of the $\kk$-module $\QSym$. Furthermore, for $n\in\NN$ and $\beta\in
-\Comp(n)$,%
+\begin{proposition}{Expansion of monomial functions in enriched monomial functions}{prop.eta.M-in-eta}
+For any $n\in\NN$ and $\beta\in \Comp(n)$, we have
 \[
 2^{\ell\left(  \beta\right)  }M_{\beta}=\sum_{\substack{\alpha\in
 \Comp(n);\\\Des\left(  \alpha\right)  \subseteq \Des\left(
 \beta\right)  }}\left(  -1\right)  ^{\ell\left(  \beta\right)  -\ell\left(
 \alpha\right)  }\eta_{\alpha}.
 \]
+\end{proposition}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The $\eta_{\alpha}$ as a basis, antipode and coproduct}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{theorem}{Enriched monomials are a basis of QSym}{theorem.eta.basis}
+Assume that $2$ is invertible in $\kk$. Then, the
+family $\left(  \eta_{\alpha}\right)  _{n \in \NN,\ \alpha\in\Comp(n)}$ \textbf{is a basis} of the $\kk$-module $\QSym$.
 \end{theorem}
+
+The $\kk$-module $\QSym$ is a Hopf algebra; let $S$ be its antipode.
 
 \begin{proposition}{Antipode of enriched monomials}{prop.eta.S}Let $n \in \NN$ and $\alpha\in\Comp(n)$. Then, the antipode $S$
 of $\QSym$ satisfies
@@ -537,7 +540,8 @@ of $\QSym$ satisfies
 S\left(  \eta_{\alpha}\right)  =\left(  -1\right)  ^{\ell\left(
 \alpha\right)  }\eta_{\operatorname*{rev}\alpha}.
 \]
-
+Here, if $\alpha := \tup{\alpha_1, \alpha_2, \ldots, \alpha_p}$, then
+$\defnm{\operatorname{rev}\alpha} := \tup{\alpha_p, \alpha_{p-1}, \ldots, \alpha_1}$.
 \end{proposition}
 
 \begin{theorem}{Coproduct of enriched monomials}{thm.Delta-eta} Consider the coproduct $\Delta:\operatorname*{QSym}\rightarrow
@@ -658,11 +662,11 @@ U^{\PP^\pm}_{\pi,\al} = \sum_{I \subseteq \Peak(\pi)}(-1)^{|I|}\eta_{\al^{\downa
 \begin{proof}[Proof (sketch).]
 From the definition of  $U^{\PP^\pm}_{\pi,\al}$, one can obtain without too much trouble that
 \begin{equation*}
-U^{\PP^\pm}_{\pi,\al} = \sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in \Peak(\pi) \Rightarrow \lnot \left( i_{j-1}=i_{j}=i_{j+1}\right)}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n} .
+U^{\PP^\pm}_{\pi,\al} = \sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in \Peak(\pi) \implies \lnot \left( i_{j-1}=i_{j}=i_{j+1}\right)}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n} .
 \end{equation*}
 By the inclusion-exclusion principle, this can be rewritten as
 \begin{equation*}
-U^{\PP^\pm}_{\pi,\al} =\sum_{I \subseteq \Peak(\pi)}(-1)^{|I|} \underbrace{\sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in I \Rightarrow  i_{j-1}=i_{j}=i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n}}_{\substack{= \eta_{\al^{\downarrow\downarrow I}}\\}} .
+U^{\PP^\pm}_{\pi,\al} =\sum_{I \subseteq \Peak(\pi)}(-1)^{|I|} \underbrace{\sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in I \implies  i_{j-1}=i_{j}=i_{j+1}}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n}}_{\substack{= \eta_{\al^{\downarrow\downarrow I}}\\}} .
 \qedhere
 \end{equation*}
 \end{proof}

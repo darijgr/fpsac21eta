@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Cygwin) (preloaded format=pdflatex 2021.12.30)  17 JAN 2022 19:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Cygwin) (preloaded format=pdflatex 2021.12.30)  17 JAN 2022 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1392,37 +1392,37 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 519.
+(hyperref)                removing `math shift' on input line 528.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\eta' on input line 519.
+(hyperref)                removing `\eta' on input line 528.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 519.
+(hyperref)                removing `subscript' on input line 528.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 519.
+(hyperref)                removing `\alpha' on input line 528.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 519.
+(hyperref)                removing `math shift' on input line 528.
 
 File: Poset.png Graphic file (type png)
 <use Poset.png>
-Package pdftex.def Info: Poset.png  used on input line 567.
+Package pdftex.def Info: Poset.png  used on input line 571.
 (pdftex.def)             Requested size: 223.39917pt x 61.35045pt.
 <PosetMonomial.pdf, id=23, 1000.73875pt x 81.30376pt>
 File: PosetMonomial.pdf Graphic file (type pdf)
 <use PosetMonomial.pdf>
-Package pdftex.def Info: PosetMonomial.pdf  used on input line 586.
+Package pdftex.def Info: PosetMonomial.pdf  used on input line 590.
 (pdftex.def)             Requested size: 200.14421pt x 16.26045pt.
 <PosetBij.png, id=24, 1953.2975pt x 631.35875pt>
 File: PosetBij.png Graphic file (type png)
 <use PosetBij.png>
-Package pdftex.def Info: PosetBij.png  used on input line 621.
+Package pdftex.def Info: PosetBij.png  used on input line 625.
 (pdftex.def)             Requested size: 429.72678pt x 138.89935pt.
 [1
 
@@ -1437,13 +1437,13 @@ Package logreq Info: Writing requests to 'fps21eta-talk.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33455 strings out of 479022
- 610668 string characters out of 5866097
- 1383030 words of memory out of 5000000
+ 33456 strings out of 479022
+ 610676 string characters out of 5866097
+ 1384127 words of memory out of 5000000
  50333 multiletter control sequences out of 15000+600000
  422583 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,14n,116p,10671b,1521s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 111i,22n,116p,10671b,1521s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texmf-dist/fonts/type1/publ
@@ -1461,10 +1461,10 @@ sy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/
 type1/public/cm-super/sfrm1200.pfb>
-Output written on fps21eta-talk.pdf (2 pages, 358911 bytes).
+Output written on fps21eta-talk.pdf (2 pages, 358940 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 200 compressed objects within 2 object streams
- 50 named destinations out of 1000 (max. 500000)
+ 237 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 51 named destinations out of 1000 (max. 500000)
  137 words of extra memory for PDF output out of 10000 (max. 10000000)
 
