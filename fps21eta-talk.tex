@@ -619,19 +619,26 @@ U^\mathcal{Z}_{\pi,\alpha} = \Gamma_\mathcal{Z}([n],<_\pi, \alpha).
 \end{equation}
 \end{definition}
 
+So the $U^\mathcal{Z}_{\pi,\alpha}$s are the $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$s for totally ordered $P$'s.
+Thus, by Proposition~\ref{prop.Gamma.linexts}, each $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ is a sum of $U^\mathcal{Z}_{\pi,\alpha}$s.
+
+The $U^\mathcal{Z}_{\pi,\alpha}$s include, as particular cases, all four bases we have seen so far (thus the ``universal''):
+
 \begin{proposition}{Specialisation of universal quasisymmetric functions}{prop.spec}
-\indent Let $n \in \NN$. Let \defn{$id_{n}$} and \defn{$\overline{id_{n}}$} denote the two permutations in $S_n$ given by $id_{n} = 1~2~3\dots n$ and $\overline{id_{n}} = n~n-1~n-2\dots 1$ (in one-line notation). Let \defn{$(1^n)$} be the composition $\tup{1, 1, \ldots, 1}$ of $n$. Then,
+\indent Let $n \in \NN$. Let \defn{$id_{n}$} and \defn{$\overline{id_{n}}$} denote the two permutations in $S_n$ given by $id_{n} = 1~2~3\dots n$ and $\overline{id_{n}} = n~n-1~n-2\dots 1$ (in one-line notation). Let \defn{$(1^n)$} be the composition $\tup{1, 1, \ldots, 1}$ of $n$. Then:
+\begin{itemize}
+\item For any $\pi \in S_n$, we have
 \begin{align*}
-U^\mathcal{\PP}_{\pi,(1^n)} = L_\pi, ~~~~~~U^\mathcal{\PP^\pm}_{\pi,(1^n)} = K_\pi
-\qquad \text{for any } \pi \in S_n,
+U^\mathcal{\PP}_{\pi,(1^n)} = L_\pi, ~~~~~~U^\mathcal{\PP^\pm}_{\pi,(1^n)} = K_\pi .
 \end{align*}
-and
-\begin{align*}
+\item For any composition $\alpha$ with $n$ entries, we have
+\begin{align}
 U^{\mathcal{\PP}}_{\overline{id_{n}},\alpha} = M_{\alpha},
 ~~~~~U^{\mathcal{\PP^\pm}}_{id_{n},\alpha} = \eta_{\alpha}
-\qquad \text{for any composition } \alpha \text{ of length } n
-\end{align*}
+\label{eq : UE}
+\end{align}
 (where we identify $\alpha$ with the appropriate weight function as in the definition above).
+\end{itemize}
 
 \end{proposition}
 
@@ -644,8 +651,9 @@ Let $\pi$ and $\sigma$ be two permutations in $S_n$ and $S_m$, and let $\alpha =
 The product of two universal quasisymmetric functions is given by
 \begin{equation}
 \label{eq : UU}
-U^\mathcal{Z}_{\pi,\alpha}U^\mathcal{Z}_{\sigma,\beta}=\sum_{(\tau,\gamma)\in(\pi,\alpha)\shuffle(\sigma,\beta)}U^\mathcal{Z}_{\tau,\gamma} .
+U^\mathcal{Z}_{\pi,\alpha}U^\mathcal{Z}_{\sigma,\beta}=\sum_{(\tau,\gamma)\in(\pi,\alpha)\shuffle(\sigma,\beta)}U^\mathcal{Z}_{\tau,\gamma} ,
 \end{equation}
+where the sum is over all ways to shuffle $\pi$ with $m + \sigma$ and -- using the same shuffle -- shuffle $\alpha$ with $\beta$.
 \end{theorem}
 % \begin{proof}
 % The proof is iterative and uses the following decomposition of posets.
