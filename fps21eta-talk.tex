@@ -658,6 +658,15 @@ U^\mathcal{Z}_{\pi,\alpha}U^\mathcal{Z}_{\sigma,\beta}=\sum_{(\tau,\gamma)\in(\p
 \end{equation}
 where the sum is over all ways to shuffle $\pi$ with $m + \sigma$ and -- using the same permutation -- shuffle $\alpha$ with $\beta$.
 \end{theorem}
+
+This follows from \eqref{eq.prop.Gamma.linexts.eq} and from the obvious product rule for $\Gamma_\mathcal{Z}([n],<_\pi, \alpha)$'s:
+\begin{align}
+\Gamma_\mathcal{Z}([n],<_P, \alpha) \cdot \Gamma_\mathcal{Z}([m],<_Q, \beta)
+= \Gamma_\mathcal{Z}([n+m],<_{PQ}, \alpha \sqcup \beta),
+\label{eq.Gamma.product}
+\end{align}
+where $<_{PQ}$ is the disjoint union of the relation $<_P$ on $[n]$ and the (shifted-by-$n$) relation $<_Q$ on $[n+1, n+m]$.
+
 % \begin{proof}
 % The proof is iterative and uses the following decomposition of posets.
 % %
