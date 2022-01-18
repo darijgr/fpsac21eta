@@ -124,8 +124,9 @@
 \newcommand{\whP}{{\widehat{P}}}
 \newcommand{\calP}{\mathcal{P}}
 \newcommand{\calS}{\mathcal{S}}
-\newcommand{\calI}{\mathcal{I}}
-\newcommand{\rato}{\dashrightarrow}
+\newcommand{\calZ}{\mathcal{Z}}
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calL}{\mathcal{L}}
 \newcommand{\lcm}{\operatorname*{lcm}}
 \newcommand{\lm}{\lambda / \mu}
 \newcommand{\fti}[1]{\subsection{#1}}
@@ -411,12 +412,12 @@ Let $\mathcal{Z}$ be a subset of % the totally ordered set
 $\PP^{\pm}$, and $P=([n],<_P)$ be a labelled poset.
 A \defn{$\mathcal{Z}$-enriched $P$-partition} is
 an enriched $P$-partition $f : [n] \longrightarrow \PP^{\pm} $ with $f([n]) \subseteq \mathcal{Z}$.
-Let \defn{$\mathcal{L}_\mathcal{Z}(P)$} denote the set of $\mathcal{Z}$-enriched $P$-partitions.
+Let \defn{$\calA_\mathcal{Z}(P)$} denote the set of $\mathcal{Z}$-enriched $P$-partitions.
 
 \item Let $X = \left\{x_1,x_2,x_3,\ldots\right\}$, $P =([n],<_P)$, and $\mathcal{Z} \subseteq \PP^{\pm}$. Define the  \defn{$\mathcal{Z}$-generating function of $P$} as the formal power series
 \begin{align}
 \label{eq : GammaTrad}
-\Gamma_{\mathcal{Z}}([n], <_P) &= \sum_{f \in \mathcal{L}_\mathcal{Z}([n],<_P)}\ \ \prod_{1\leq i \leq n}x_{|f(i)|} .
+\Gamma_{\mathcal{Z}}([n], <_P) &= \sum_{f \in \calA_\mathcal{Z}([n],<_P)}\ \ \prod_{1\leq i \leq n}x_{|f(i)|} .
 \end{align}
 \item Given $\pi \in S_n$, let $P_\pi = ([n],<_\pi)$ denote the labelled poset where the order relation $<_\pi$ is such that $\pi_i <_\pi \pi_j$ if and only if $i < j$ (see Figure \ref{fig : ppart}).
 \begin{figure}[htbp]
@@ -425,6 +426,8 @@ Let \defn{$\mathcal{L}_\mathcal{Z}(P)$} denote the set of $\mathcal{Z}$-enriched
  \label{fig : ppart}
  \end{center}
  \end{figure}
+
+For $\mathcal{Z} = \PP$, this recovers Gessel's $P$-partition enumerator (called $\Gamma(P)$ in \cite{Ges84}).
 
 \item Set $L_{\pi}= \Gamma_{\PP}([n],<_\pi)$ and $K_{\pi}= \Gamma_{\PP^\pm}([n],<_\pi)$. The function $L_\pi$ is equal to the fundamental quasisymmetric function $L_\al$ indexed by the unique composition $\al$ such that $\Des(\al) = \Des(\pi)$. Similarly, $K_\pi$ is equal to the peak function $K_\al$ indexed by the unique odd composition $\al$ such that $\Peak(\al) = \Peak(\pi)$. 
 
@@ -563,45 +566,68 @@ be a composition. Then,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Weighted posets}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Now we generalize the $\calZ$-generating function of a labelled poset by putting exponents on the $x_{|f(i)|}$'s:
+
 \begin{definition}{Labelled weighted posets}{def.weighted}
-A \textbf{labelled weighted poset} is a triple $P = ([n], <_P, \epsilon)$ where $([n], <_P)$ is a labelled poset and $\epsilon : [n] \longrightarrow \PP$ is a map (called the \textbf{weight function}).
-In a labelled weighted poset each node is marked with two numbers: its label $i \in [n]$ and its weight $\epsilon(i)$.
+A \defn{labelled weighted poset} is a triple $P = ([n], <_P, \epsilon)$ where $([n], <_P)$ is a labelled poset and $\epsilon : [n] \longrightarrow \PP$ is a map (called the \defn{weight function}).
+In a labelled weighted poset, each node is marked with two numbers: its label $i \in [n]$ and its weight $\epsilon(i)$.
 %
 \begin{center}
  \includegraphics[scale=0.16]{Poset.png}
  \label{fig : poset}
  \end{center}
  %
- For any set $\mathcal{Z}\subseteq \PP^{\pm}$, we define the generating function $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ of the labelled weighted poset $([n], <_P, \epsilon)$ by
+ For any set $\mathcal{Z}\subseteq \PP^{\pm}$, we define the generating function \defn{$\Gamma_\mathcal{Z}([n], <_P, \epsilon)$} of the labelled weighted poset $([n], <_P, \epsilon)$ by
 \begin{equation}
 \label{eq : weightGamma}
-\Gamma_\mathcal{Z}([n], <_P, \epsilon) = \sum_{f \in \mathcal{L}_\mathcal{Z}([n], <_P)}\ \ \prod_{1\leq i \leq n}x^{\epsilon(i)}_{|f(i)|} .
+\Gamma_\mathcal{Z}([n], <_P, \epsilon) = \sum_{f \in \calA_\mathcal{Z}([n], <_P)}\ \ \prod_{1\leq i \leq n}x_{|f(i)|}^{\epsilon(i)} .
 \end{equation} 
  \end{definition}
+
+\begin{proposition}{Decomposition of $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ into linear extensions}{prop.Gamma.linexts}
+Let $P = ([n], <_P, \epsilon)$ be a labelled weighted poset.
+Let $\calL\tup{P}$ be the set of all linear extensions of the poset $([n], <_P)$. Then,
+\[
+\Gamma_\mathcal{Z}([n], <_P, \epsilon)
+= \sum_{([n], <_L) \in \calL\tup{P}} \Gamma_\mathcal{Z}([n], <_L, \epsilon) .
+\]
+\end{proposition}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Universal quasisymmetric functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{definition}{Universal quasisymmetric functions}{def.universal}
 Let $\alpha = (\alpha_1, \alpha_2, \ldots, \alpha_n)$ be a composition.
-Let $\pi=\pi_1\dots\pi_n$ be a permutation in $S_n$.
-Let $P_{\pi,\alpha} = ([n],<_\pi,\alpha)$ denote the labelled weighted poset composed of the labelled poset $([n], <_\pi)$ and the weight function sending the vertex labelled $\pi_i$ to $\alpha_i$.
+Let $\pi=\pi_1\dots\pi_n$ (in one-line notation) be a permutation in $S_n$.
+
+Let $\defnm{P_{\pi,\alpha}} = ([n],<_\pi,\alpha)$ denote the labelled weighted poset composed of the labelled poset $([n], <_\pi)$ and the weight function
+\[
+\alpha : \pi_i \mapsto \alpha_i .
+\]
 \begin{center}
 \includegraphics[scale=0.20]{PosetMonomial.pdf}
  \label{fig : monomial}
  \end{center}
-We define the \textbf{universal quasisymmetric function} $U^\mathcal{Z}_{\pi,\alpha}$ as the generating function
+We define the \defn{universal quasisymmetric function} $U^\mathcal{Z}_{\pi,\alpha}$ as the generating function
 \begin{equation}
 U^\mathcal{Z}_{\pi,\alpha} = \Gamma_\mathcal{Z}([n],<_\pi, \alpha).
 \end{equation}
 \end{definition}
 
 \begin{proposition}{Specialisation of universal quasisymmetric functions}{prop.spec}
-\indent Let $n \in \NN$. Let $id_{n}$ and $\overline{id_{n}}$ denote the two permutations in $S_n$ given by $id_{n} = 1~2~3\dots n$ and $\overline{id_{n}} = n~n-1~n-2\dots 1$ (in one-line notation). Denote further $(1^n)$ the composition of $n$ with $n$ entries equal to $1$. Let $\pi \in S_n$. Then,
-\begin{align}
-\label{eq : UE} U^\mathcal{\PP}_{\pi,(1^n)} = L_\pi, ~~~~~~U^\mathcal{\PP^\pm}_{\pi,(1^n)} = K_\pi, ~~~~~~U^{\mathcal{\PP}}_{\overline{id_{n}},\alpha} = M_{\alpha},
-~~~~~U^{\mathcal{\PP^\pm}}_{id_{n},\alpha} = \eta_{\alpha}.
-\end{align}
+\indent Let $n \in \NN$. Let \defn{$id_{n}$} and \defn{$\overline{id_{n}}$} denote the two permutations in $S_n$ given by $id_{n} = 1~2~3\dots n$ and $\overline{id_{n}} = n~n-1~n-2\dots 1$ (in one-line notation). Let \defn{$(1^n)$} be the composition $\tup{1, 1, \ldots, 1}$ of $n$. Then,
+\begin{align*}
+U^\mathcal{\PP}_{\pi,(1^n)} = L_\pi, ~~~~~~U^\mathcal{\PP^\pm}_{\pi,(1^n)} = K_\pi
+\qquad \text{for any } \pi \in S_n,
+\end{align*}
+and
+\begin{align*}
+U^{\mathcal{\PP}}_{\overline{id_{n}},\alpha} = M_{\alpha},
+~~~~~U^{\mathcal{\PP^\pm}}_{id_{n},\alpha} = \eta_{\alpha}
+\qquad \text{for any composition } \alpha \text{ of length } n
+\end{align*}
+(where we identify $\alpha$ with the appropriate weight function as in the definition above).
 
 \end{proposition}
 
@@ -617,17 +643,17 @@ The product of two universal quasisymmetric functions is given by
 U^\mathcal{Z}_{\pi,\alpha}U^\mathcal{Z}_{\sigma,\beta}=\sum_{(\tau,\gamma)\in(\pi,\alpha)\shuffle(\sigma,\beta)}U^\mathcal{Z}_{\tau,\gamma} .
 \end{equation}
 \end{theorem}
-\begin{proof}
-The proof is iterative and uses the following decomposition of posets.
-%
-\begin{figure}[htbp]
-\begin{center}
- \includegraphics[scale=0.22]{PosetBij.png}\caption{Decomposition of a double chain weighted poset into two posets with one incomparable pair less.}
- \label{fig : prodmonomial}
- \end{center}
- \end{figure}
- %
-\end{proof}
+% \begin{proof}
+% The proof is iterative and uses the following decomposition of posets.
+% %
+% \begin{figure}[htbp]
+% \begin{center}
+ % \includegraphics[scale=0.22]{PosetBij.png}\caption{Decomposition of a double chain weighted poset into two posets with one incomparable pair less.}
+ % \label{fig : prodmonomial}
+ % \end{center}
+ % \end{figure}
+ % %
+% \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Product of  enriched monomials}

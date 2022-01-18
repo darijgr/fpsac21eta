@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Cygwin) (preloaded format=pdflatex 2021.12.30)  17 JAN 2022 19:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Cygwin) (preloaded format=pdflatex 2021.12.30)  18 JAN 2022 01:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1172,27 +1172,27 @@ File: biblatex.cfg
  (./fps21eta-talk.aux)
 \openout1 = `fps21eta-talk.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 266.
-LaTeX Font Info:    ... okay on input line 266.
-Package scrbase Info: activating english \contentsname on input line 266.
-Package scrbase Info: activating english \listfigurename on input line 266.
-Package scrbase Info: activating english \listtablename on input line 266.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 267.
+LaTeX Font Info:    ... okay on input line 267.
+Package scrbase Info: activating english \contentsname on input line 267.
+Package scrbase Info: activating english \listfigurename on input line 267.
+Package scrbase Info: activating english \listtablename on input line 267.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1258,36 +1258,36 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 266
+LaTeX Font Info:    Trying to load font information for U+msa on input line 267
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 266
+LaTeX Font Info:    Trying to load font information for U+msb on input line 267
 .
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+wasy on input line 26
-6.
+7.
 
 (/usr/share/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 2
-66.
+67.
 
 (/usr/share/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 26
-6.
+7.
 
 (/usr/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-Package xypdf Info: Line width: 0.47998pt on input line 266.
-Package hyperref Info: Link coloring OFF on input line 266.
+Package xypdf Info: Line width: 0.47998pt on input line 267.
+Package hyperref Info: Link coloring OFF on input line 267.
 
 (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1300,9 +1300,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count446
 )
-LaTeX Info: Redefining \ref on input line 266.
-LaTeX Info: Redefining \pageref on input line 266.
-LaTeX Info: Redefining \nameref on input line 266.
+LaTeX Info: Redefining \ref on input line 267.
+LaTeX Info: Redefining \pageref on input line 267.
+LaTeX Info: Redefining \nameref on input line 267.
 
 (./fps21eta-talk.out) (./fps21eta-talk.out)
 \@outlinefile=\write8
@@ -1315,7 +1315,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 266.
+(scrartcl)           before \begin{document} on input line 267.
 
 (/usr/share/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1351,96 +1351,105 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'fps21eta-talk.bbl' found.
 
 (./fps21eta-talk.bbl)
-Package biblatex Info: Reference section=0 on input line 266.
-Package biblatex Info: Reference segment=0 on input line 266.
+Package biblatex Info: Reference section=0 on input line 267.
+Package biblatex Info: Reference segment=0 on input line 267.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 274.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 275.
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--278
+Underfull \hbox (badness 10000) in paragraph at lines 274--279
 
  []
 
 <Poset.png, id=14, 1396.21625pt x 383.4325pt>
 File: Poset.png Graphic file (type png)
 <use Poset.png>
-Package pdftex.def Info: Poset.png  used on input line 291.
+Package pdftex.def Info: Poset.png  used on input line 292.
 (pdftex.def)             Requested size: 223.39917pt x 61.35045pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 385.
+(hyperref)                removing `math shift' on input line 386.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 385.
+(hyperref)                removing `math shift' on input line 386.
 
 <PPart.png, id=21, 930.47626pt x 81.30376pt>
 File: PPart.png Graphic file (type png)
 <use PPart.png>
-Package pdftex.def Info: PPart.png  used on input line 424.
+Package pdftex.def Info: PPart.png  used on input line 425.
 (pdftex.def)             Requested size: 186.09195pt x 16.26045pt.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 445.
+LaTeX Warning: Citation 'Ges84' on page 1 undefined on input line 430.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 445.
+(hyperref)                removing `math shift' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 445.
+(hyperref)                removing `\new@ifnextchar' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 528.
+(hyperref)                removing `math shift' on input line 448.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\eta' on input line 528.
+(hyperref)                removing `math shift' on input line 531.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 528.
+(hyperref)                removing `\eta' on input line 531.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\alpha' on input line 528.
+(hyperref)                removing `subscript' on input line 531.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 528.
+(hyperref)                removing `\alpha' on input line 531.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 531.
 
 File: Poset.png Graphic file (type png)
 <use Poset.png>
-Package pdftex.def Info: Poset.png  used on input line 571.
+Package pdftex.def Info: Poset.png  used on input line 577.
 (pdftex.def)             Requested size: 223.39917pt x 61.35045pt.
 <PosetMonomial.pdf, id=23, 1000.73875pt x 81.30376pt>
 File: PosetMonomial.pdf Graphic file (type pdf)
 <use PosetMonomial.pdf>
-Package pdftex.def Info: PosetMonomial.pdf  used on input line 590.
+Package pdftex.def Info: PosetMonomial.pdf  used on input line 609.
 (pdftex.def)             Requested size: 200.14421pt x 16.26045pt.
-<PosetBij.png, id=24, 1953.2975pt x 631.35875pt>
-File: PosetBij.png Graphic file (type png)
-<use PosetBij.png>
-Package pdftex.def Info: PosetBij.png  used on input line 625.
-(pdftex.def)             Requested size: 429.72678pt x 138.89935pt.
+
+LaTeX Warning: Reference `eq : UE' on page 1 undefined on input line 661.
+
 [1
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Poset.png> <./PPart.png>
- <./PosetMonomial.pdf> <./PosetBij.png>] [2] (./fps21eta-talk.aux)
+ <./PosetMonomial.pdf>] [2] (./fps21eta-talk.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `fps21eta-talk.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+Package biblatex Warning: Please (re)run BibTeX on the file(s):
+(biblatex)                fps21eta-talk
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'fps21eta-talk.run.xml'.
 \openout1 = `fps21eta-talk.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33456 strings out of 479022
- 610676 string characters out of 5866097
- 1384127 words of memory out of 5000000
- 50333 multiletter control sequences out of 15000+600000
+ 33451 strings out of 479022
+ 610609 string characters out of 5866097
+ 1386047 words of memory out of 5000000
+ 50330 multiletter control sequences out of 15000+600000
  422583 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,22n,116p,10671b,1521s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1461,10 +1470,10 @@ sy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/
 type1/public/cm-super/sfrm1200.pfb>
-Output written on fps21eta-talk.pdf (2 pages, 358940 bytes).
+Output written on fps21eta-talk.pdf (2 pages, 284613 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 137 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 132 words of extra memory for PDF output out of 10000 (max. 10000000)
 
