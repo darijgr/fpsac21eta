@@ -681,19 +681,19 @@ Let $\alpha$ and $\beta$ be two compositions with $n$ and $m$ entries. Equations
 We shall now rewrite this as an alternating sum of $\eta_\gamma$s.
 
 \begin{definition}{Composition reduction}{def.comp.reduc}
-Let $\al = (\al_1, \dots, \al_n)$ be a composition with $n$ entries. Let $\al^{\downarrow\downarrow i}$ denote the following composition with $n-2$ entries:
+Let $\al = (\al_1, \dots, \al_n)$ be a composition with $n$ entries. For any $1 < i < n$, let $\al^{\downarrow\downarrow i}$ denote the following composition with $n-2$ entries:
 \begin{equation*}
 \al^{\downarrow\downarrow i} = (\al_1, \dots, \al_{i-2},{\al_{i-1}+\al_i+\al_{i+1}},\al_{i+2},\dots ,\al_n) .
 \end{equation*}  
-Furthermore, for any subset $I\subseteq [n-1]$, we set $\al^{\downarrow\downarrow I}= \al$ if $I=\varnothing$ and
+Furthermore, if $I\subseteq [2, n-1]$ is a set containing no two consecutive integers, then we set
 \[
-\al^{\downarrow\downarrow I}
+\defnm{\al^{\downarrow\downarrow I}}
 = \left( \left( \cdots \left( \al^{\downarrow i_k} \right) \cdots \right)^{\downarrow i_2} \right)^{\downarrow i_1} ,
 \]
 where $i_1, i_2, \ldots, i_k$ are the elements of $I \neq \varnothing$ in increasing order.
-As an example, let $\al = (2,1,4,3,2)$. We have $\al^{\downarrow\downarrow 3} = (2,8,2)$ and $\al^{\downarrow \downarrow\{2,4\}} = (12).$
-
+(In particular, $\al^{\downarrow\downarrow \varnothing}= \al$.)
 \end{definition}
+As an example, let $\al = (2,1,4,3,2)$. We have $\al^{\downarrow\downarrow 3} = (2,8,2)$ and $\al^{\downarrow \downarrow\{2,4\}} = (12)$.
 %
 \begin{theorem}{Universal quasisymmetric functions to enriched monomials}{thm.univ.enriched}
 Let $\alpha$ be a composition with $n$ entries and $\pi$ a permutation in $S_n$. We have
