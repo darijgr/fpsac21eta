@@ -325,11 +325,11 @@ In the present work:
 \item \defn{$\Comp(n)$} is the set of \defn{compositions} $\al = (\al_1, \al_2, \dots, \al_p)$ of $n$. \defn{$\Odd(n)$} is the set of \defn{odd compositions} of $n$ containing only odd integers.  Let $\ell(\al) := p$, $|\al| := \sum_i \al_i = n$.
 
 \item The \defn{descent set} $\Des(\pi)$ of $\pi \in S_n$ is 
-$\Des(\pi) = \{1\leq i\leq n-1| \pi(i)>\pi(i+1)\}.$
+$\Des(\pi) = \{1\leq i\leq n-1 \mid \pi(i)>\pi(i+1)\}.$
 
 
 \item The \defn{peak set} $\Peak(\pi)$ of $\pi$ is $
-\Peak(\pi) = \{2\leq i\leq n-1| \pi(i-1)<\pi(i)>\pi(i+1)\}.$
+\Peak(\pi) = \{2\leq i\leq n-1 \mid \pi(i-1)<\pi(i)>\pi(i+1)\}.$
 
 \item Compositions of $n$ are in bijection with descent sets of permutations in $S_n$, while odd compositions of $n$ are in (a more complicated) bijection with peak sets. Denote \defn{$\Des(\al)$} (resp. \defn{$\Peak(\al)$}) the descent set (resp., peak set) associated with composition (resp., odd composition) $\al$.
 
@@ -685,15 +685,15 @@ Let $\al = (\al_1, \dots, \al_n)$ be a composition with $n$ entries. For any $1 
 \begin{equation*}
 \al^{\downarrow\downarrow i} = (\al_1, \dots, \al_{i-2},{\al_{i-1}+\al_i+\al_{i+1}},\al_{i+2},\dots ,\al_n) .
 \end{equation*}  
-Furthermore, if $I\subseteq [2, n-1]$ is a set containing no two consecutive integers, then we set
+Furthermore, if $I = \set{i_1 < i_2 < \cdots < i_k} \subseteq [2, n-1]$ is a set containing no two consecutive integers, then we set
 \[
 \defnm{\al^{\downarrow\downarrow I}}
-= \left( \left( \cdots \left( \al^{\downarrow i_k} \right) \cdots \right)^{\downarrow i_2} \right)^{\downarrow i_1} ,
+= \left( \left( \cdots \left( \al^{\downarrow i_k} \right) \cdots \right)^{\downarrow i_2} \right)^{\downarrow i_1} .
 \]
-where $i_1, i_2, \ldots, i_k$ are the elements of $I \neq \varnothing$ in increasing order.
+% where $i_1, i_2, \ldots, i_k$ are the elements of $I$ in increasing order.
 (In particular, $\al^{\downarrow\downarrow \varnothing}= \al$.)
 \end{definition}
-As an example, let $\al = (2,1,4,3,2)$. We have $\al^{\downarrow\downarrow 3} = (2,8,2)$ and $\al^{\downarrow \downarrow\{2,4\}} = (12)$.
+\textbf{Example:} If $\al = (2,1,4,3,2)$, then $\al^{\downarrow\downarrow 3} = (2,8,2)$ and $\al^{\downarrow \downarrow\{2,4\}} = (12)$.
 %
 \begin{theorem}{Universal quasisymmetric functions to enriched monomials}{thm.univ.enriched}
 Let $\alpha$ be a composition with $n$ entries and $\pi$ a permutation in $S_n$. We have
@@ -703,7 +703,7 @@ U^{\PP^\pm}_{\pi,\al} = \sum_{I \subseteq \Peak(\pi)}(-1)^{|I|}\eta_{\al^{\downa
 \end{equation}
 \end{theorem}
 \begin{proof}[Proof (sketch).]
-From the definition of  $U^{\PP^\pm}_{\pi,\al}$, one can obtain without too much trouble that
+From the definition of  $U^{\PP^\pm}_{\pi,\al}$, one easily obtains
 \begin{equation*}
 U^{\PP^\pm}_{\pi,\al} = \sum_{\substack{i_1\leq i_2\leq\dots \leq i_n;\\j\in \Peak(\pi) \implies \lnot \left( i_{j-1}=i_{j}=i_{j+1}\right)}}2^{|\{i_1,i_2,\dots,i_n\}|}x_{i_1}^{\al_1}x_{i_2}^{\al_2}\dots x_{i_n}^{\al_n} .
 \end{equation*}
@@ -715,7 +715,7 @@ U^{\PP^\pm}_{\pi,\al} =\sum_{I \subseteq \Peak(\pi)}(-1)^{|I|} \underbrace{\sum_
 \end{proof}
 %
 \begin{theorem}{Product rule for enriched monomials}{theorem : EEE}
-Let $\al=(\al_1,\dots,\al_n)$ and $\beta=(\be_1,\dots,\be_m)$ be two compositions. Given a composition $\gamma$ obtained by shuffling $\al$ and $\be$ (we shall denote this by $\gamma \in \al\shuffle\be$), let $S_\beta(\gamma)$ be the set of the positions of the entries of $\beta$ in $\gamma$. Denote further $S_\beta(\gamma)-1 =\{i-1|i \in S_\beta(\gamma)\}$. Then,
+Let $\al=(\al_1,\dots,\al_n)$ and $\beta=(\be_1,\dots,\be_m)$ be two compositions. Given a composition $\gamma$ obtained by shuffling $\al$ and $\be$ (we shall denote this by $\gamma \in \al\shuffle\be$), let $S_\beta(\gamma)$ be the set of the positions of the entries of $\beta$ in $\gamma$. Denote further $S_\beta(\gamma)-1 =\{i-1 \mid i \in S_\beta(\gamma)\}$. Then,
 \begin{equation}
 \label{eq : EEE}
 \eta_\al \eta_\beta
@@ -733,7 +733,7 @@ As an example, one has
 \end{theorem}
 \begin{proof}[Proof (sketched).]
 Recall \eqref{eq : MME}, and rewrite the right-hand side using \eqref{eq : U as sum}.
-Let $(\tau,\gamma)$ be a coshuffle in $(id_n,\al)\shuffle(id_m,\be)$. The index $i$ belongs to $\Peak(\tau)$ if and only if $\tau_i$ is a letter of $n+id_m$ and $\tau_{i+1}$ is a letter of $id_n$ and we have $i > 1$. That is, if and only if $i$ is the index of an entry of $\beta$ in $\gamma$ and $i+1$ is the index of an entry of $\al$.
+Let $(\tau,\gamma) \in (id_n,\al)\shuffle(id_m,\be)$. The index $i$ belongs to $\Peak(\tau)$ if and only if $\tau_i$ is a letter of $n+id_m$ and $\tau_{i+1}$ is a letter of $id_n$ and we have $i > 1$. That is, if and only if $i$ is the index of an entry of $\beta$ in $\gamma$ and $i+1$ is the index of an entry of $\al$.
 Thus, $\Peak(\tau) = \left(S_{\be}(\gamma)\setminus (S_{\be}(\gamma)-1)\right) \setminus \left\{1\right\}$.
 Therefore, we obtain \eqref{eq : EEE}.
 \end{proof}
