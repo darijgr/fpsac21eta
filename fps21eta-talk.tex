@@ -271,9 +271,9 @@
 \date{2022-01-17}
 \maketitle
 
-\noindent \textbf{these slides: \color{red}
+\noindent \textbf{these slides: \\ \phantom{a}\quad \color{red}
 \url{https://github.com/darijgr/fpsac21eta/raw/main/fps21eta-talk.pdf}}%
-\newline\textbf{paper: \color{red}
+\newline\textbf{extended abstract: \\ \phantom{a}\quad \color{red}
 \url{https://www.mat.univie.ac.at/~slc/wpapers/FPSAC2021/58Grinberg.pdf}}%
 \newline
 
@@ -511,14 +511,19 @@ i_{1},i_{2},\ldots,i_{p}\right\}  \right\vert }x_{i_{1}}^{\alpha_{1}}x_{i_{2}%
 \end{align*}
 \end{proposition}
 
-\begin{proposition}{Relation to fundamental basis}{prop.eta.through-F}Let $n$ be a positive integer. Let $\alpha
-\in \Comp(n)$. Then,%
+\begin{proposition}{Relation to fundamental basis}{prop.eta.through-F}
+Let $n$ be a positive integer. Let $\alpha \in \Comp(n)$. Then,
 \[
 \eta_{\alpha}=2\sum_{\gamma\in \Comp(n)}\left(
 -1\right)  ^{\left\vert \Des\left(  \gamma\right)  \setminus \Des\left(
-\alpha\right)  \right\vert }L_{\gamma}.
+\alpha\right)  \right\vert }L_{\gamma}
 \]
-
+and
+\[
+2^n L_\alpha = \sum_{\gamma \in \Comp(n)}
+\tup{-1}^{\left\vert \Des\left(  \alpha\right)  \setminus \Des\left(
+\gamma\right)  \right\vert }\eta_{\gamma} .
+\]
 \end{proposition}
 
 \begin{proposition}{Expansion of monomial functions in enriched monomial functions}{prop.eta.M-in-eta}
@@ -543,10 +548,11 @@ The $\kk$-module $\QSym$ is a Hopf algebra; let $S$ be its antipode.
 
 \begin{proposition}{Antipode of enriched monomials}{prop.eta.S}Let $n \in \NN$ and $\alpha\in\Comp(n)$. Then, the antipode $S$
 of $\QSym$ satisfies
-\[
+\begin{align}
 S\left(  \eta_{\alpha}\right)  =\left(  -1\right)  ^{\ell\left(
 \alpha\right)  }\eta_{\operatorname*{rev}\alpha}.
-\]
+\label{eq.eta.antipode}
+\end{align}
 Here, if $\alpha := \tup{\alpha_1, \alpha_2, \ldots, \alpha_p}$, then
 $\defnm{\operatorname{rev}\alpha} := \tup{\alpha_p, \alpha_{p-1}, \ldots, \alpha_1}$.
 \end{proposition}
@@ -567,8 +573,9 @@ be a composition. Then,
 \section{The product rule for the enriched monomial basis}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Weighted posets}
+\subsection{Weighted posets and their $\calZ$-generating functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Now we generalize the $\calZ$-generating function of a labelled poset by putting exponents on the $x_{|f(i)|}$'s:
@@ -582,12 +589,14 @@ In a labelled weighted poset, each node is marked with two numbers: its label $i
  \label{fig : poset}
  \end{center}
  %
- For any set $\mathcal{Z}\subseteq \PP^{\pm}$, we define the generating function \defn{$\Gamma_\mathcal{Z}([n], <_P, \epsilon)$} of the labelled weighted poset $([n], <_P, \epsilon)$ by
+ For any set $\mathcal{Z}\subseteq \PP^{\pm}$, we define the \defn{$\calZ$-generating function} \defn{$\Gamma_\mathcal{Z}([n], <_P, \epsilon)$} of the labelled weighted poset $([n], <_P, \epsilon)$ by
 \begin{equation}
 \label{eq : weightGamma}
 \Gamma_\mathcal{Z}([n], <_P, \epsilon) = \sum_{f \in \calA_\mathcal{Z}([n], <_P)}\ \ \prod_{1\leq i \leq n}x_{|f(i)|}^{\epsilon(i)} .
-\end{equation} 
- \end{definition}
+\end{equation}
+\end{definition}
+
+If $\calZ = \PP$ or $\calZ = \PP^{\pm}$, this power series $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ lies in $\QSym$.
 
 \begin{proposition}{Decomposition of $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ into linear extensions}{prop.Gamma.linexts}
 Let $P = ([n], <_P, \epsilon)$ be a labelled weighted poset.
@@ -603,7 +612,7 @@ Let $\calL\tup{P}$ be the set of all linear extensions of the poset $([n], <_P)$
 \subsection{Universal quasisymmetric functions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-If a labelled poset $P = ([n], <_P)$ is totally ordered (i.e., $<_P$ is total), it can be described by a permutation $\pi \in S_n$. In this case, we give the $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ a new name:
+If a labelled poset $P = ([n], <_P)$ is totally ordered (i.e., $<_P$ is total), it can be described by a permutation $\pi \in S_n$. In this case, we give its $\calZ$-generating function $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ a new name:
 
 \begin{definition}{Universal quasisymmetric functions}{def.universal}
 Let $\alpha = (\alpha_1, \alpha_2, \ldots, \alpha_n)$ be a composition.
@@ -623,7 +632,7 @@ U^\mathcal{Z}_{\pi,\alpha} = \Gamma_\mathcal{Z}([n],<_\pi, \alpha).
 \end{equation}
 \end{definition}
 
-Thus, by \eqref{eq.prop.Gamma.linexts.eq}, each $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ is a sum of $U^\mathcal{Z}_{\pi,\alpha}$s.
+Thus, by \eqref{eq.prop.Gamma.linexts.eq}, each $\calZ$-generating function $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ is a sum of $U^\mathcal{Z}_{\pi,\alpha}$s.
 
 The $U^\mathcal{Z}_{\pi,\alpha}$s include, as particular cases, all four bases we have seen so far (thus the ``universal''):
 
@@ -746,5 +755,35 @@ Let $(\tau,\gamma) \in (id_n,\al)\shuffle(id_m,\be)$. The index $i$ belongs to $
 Thus, $\Peak(\tau) = \left(S_{\be}(\gamma)\setminus (S_{\be}(\gamma)-1)\right) \setminus \left\{1\right\}$.
 Therefore, we obtain \eqref{eq : EEE}.
 \end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Antipodes of $\calZ$-generating functions ({\color{red}{NEW!}})}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The formula \eqref{eq.eta.antipode} for the antipode of $\eta_\alpha$ can be generalized
+along the lines of \cite{Gri17}:
+
+\begin{theorem}{Antipode of $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$}{thm.Gamma.antipode}
+Let $P = ([n], <_P, \epsilon)$ be a labelled weighted poset.
+Assume that $\calZ = \PP$ or $\calZ = \PP^{\pm}$.
+Let $S$ be the antipode of the Hopf algebra $\QSym$. Then,
+\begin{equation}
+S\tup{ \Gamma_{\calZ}([n], <_P, \epsilon) }
+= \tup{-1}^n \Gamma_{\calZ}([n], >_P, \epsilon) ,
+\label{eq.thm.Gamma.antipode.eq}
+\end{equation}
+where $>_P$ is the opposite relation to $<_P$.
+\end{theorem}
+
+% This is a particular case of Theorem 1.8 in [ev-2021-10-10.pdf].
+
+For $\calZ = \PP$, this is \cite[Corollary 9]{Gri17}, generalizing the known antipode formulas for Schur (and dual immaculate Schur) functions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A $q$-analogue ({\color{red}{NEW!}})}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+TODO!
+
 \printbibliography
 \end{document}
