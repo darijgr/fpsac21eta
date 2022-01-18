@@ -592,10 +592,11 @@ In a labelled weighted poset, each node is marked with two numbers: its label $i
 \begin{proposition}{Decomposition of $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ into linear extensions}{prop.Gamma.linexts}
 Let $P = ([n], <_P, \epsilon)$ be a labelled weighted poset.
 Let $\calL\tup{P}$ be the set of all linear extensions of the poset $([n], <_P)$. Then,
-\[
+\begin{equation}
 \Gamma_\mathcal{Z}([n], <_P, \epsilon)
 = \sum_{([n], <_L) \in \calL\tup{P}} \Gamma_\mathcal{Z}([n], <_L, \epsilon) .
-\]
+\label{eq.prop.Gamma.linexts.eq}
+\end{equation}
 \end{proposition}
  
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -620,7 +621,7 @@ U^\mathcal{Z}_{\pi,\alpha} = \Gamma_\mathcal{Z}([n],<_\pi, \alpha).
 \end{definition}
 
 So the $U^\mathcal{Z}_{\pi,\alpha}$s are the $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$s for totally ordered $P$'s.
-Thus, by Proposition~\ref{prop.Gamma.linexts}, each $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ is a sum of $U^\mathcal{Z}_{\pi,\alpha}$s.
+Thus, \eqref{eq.prop.Gamma.linexts.eq}, each $\Gamma_\mathcal{Z}([n], <_P, \epsilon)$ is a sum of $U^\mathcal{Z}_{\pi,\alpha}$s.
 
 The $U^\mathcal{Z}_{\pi,\alpha}$s include, as particular cases, all four bases we have seen so far (thus the ``universal''):
 
